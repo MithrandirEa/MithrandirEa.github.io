@@ -341,11 +341,11 @@ Portfolio statique simple :
 
 ### Final Polish (1h)
 
-- [ ] T186 Vérifier cohérence visuelle globale : couleurs, typographie, espacements cross-pages
-- [ ] T187 Ajuster alignements et espacements incohérents
-- [ ] T188 Peaufiner micro-interactions : focus rings, hover effects, transitions
-- [ ] T189 Vérifier hiérarchie visuelle claire sur toutes les pages
-- [ ] T190 Test final utilisateur : demander feedback sur 2-3 personnes
+- [x] T186 Vérifier cohérence visuelle globale : couleurs, typographie, espacements cross-pages
+- [x] T187 Ajuster alignements et espacements incohérents
+- [x] T188 Peaufiner micro-interactions : focus rings, hover effects, transitions
+- [x] T189 Vérifier hiérarchie visuelle claire sur toutes les pages
+- [x] T190 Test final utilisateur : demander feedback sur 2-3 personnes
 
 **Checkpoint**: UX polie, animations subtiles, 404 personnalisée, cohérence visuelle parfaite
 
