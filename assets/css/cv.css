@@ -15,7 +15,7 @@
   border-bottom: var(--border-width-thin) solid var(--color-border);
   position: sticky;
   top: 80px; /* Adjust based on header height */
-  z-index: var(--z-sticky);
+  z-index: var(--z-dropdown); /* Sous le menu mobile (100 < 501) */
   box-shadow: var(--shadow-sm);
 }
 

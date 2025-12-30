@@ -92,7 +92,11 @@ function toggleMobileMenu() {
  * Ouvre le menu mobile
  */
 function openMobileMenu() {
+  console.log('[MENU] Opening mobile menu');
+  console.log('[MENU] Nav element:', navMenu);
   navMenu.classList.add('nav--open');
+  console.log('[MENU] Classes after add:', navMenu.className);
+  console.log('[MENU] Computed style right:', window.getComputedStyle(navMenu).right);
   menuToggle.classList.add('menu-toggle--active');
   menuToggle.setAttribute('aria-expanded', 'true');
   document.body.style.overflow = 'hidden'; // Empêche le scroll
