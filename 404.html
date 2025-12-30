@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Charset et Viewport -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- SEO Meta Tags -->
+  <title>404 - Page non trouvée | Clément SCIPION</title>
+  <meta name="description" content="Oups ! La page que vous recherchez n'existe pas. Retournez à l'accueil du portfolio de Clément SCIPION, développeur Python.">
+  <meta name="robots" content="noindex, follow">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#14213D">
+  <meta name="theme-color" content="#14213D">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  
+  <style>
+    /* 404 Page Specific Styles */
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--spacing-8) var(--spacing-4);
+      background: linear-gradient(
+        135deg,
+        var(--color-prussian-blue) 0%,
+        #0d1629 100%
+      );
+      text-align: center;
+    }
+    
+    .error-content {
+      max-width: 600px;
+      animation: fadeInUp 0.6s ease-out;
+    }
+    
+    .error-code {
+      font-family: var(--font-secondary);
+      font-size: clamp(6rem, 15vw, 10rem);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-orange);
+      line-height: 1;
+      margin-bottom: var(--spacing-4);
+      text-shadow: 0 4px 20px rgba(252, 163, 17, 0.3);
+    }
+    
+    .error-title {
+      font-family: var(--font-secondary);
+      font-size: var(--font-size-3xl);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-white);
+      margin-bottom: var(--spacing-4);
+    }
+    
+    .error-message {
+      font-size: var(--font-size-lg);
+      color: var(--color-alabaster-grey);
+      line-height: var(--line-height-relaxed);
+      margin-bottom: var(--spacing-8);
+    }
+    
+    .error-actions {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-4);
+      align-items: center;
+    }
+    
+    .error-icon {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto var(--spacing-6);
+      opacity: 0.8;
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .error-actions {
+        flex-direction: row;
+        justify-content: center;
+      }
+      
+      .error-title {
+        font-size: var(--font-size-4xl);
+      }
+      
+      .error-message {
+        font-size: var(--font-size-xl);
+      }
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      .error-content {
+        animation: none;
+      }
+      
+      .error-icon {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 404 Error Page -->
+  <main class="error-page">
+    <div class="error-content">
+      <!-- Error Icon -->
+      <svg class="error-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" stroke="#FCA311" fill="none"></circle>
+        <line x1="12" y1="8" x2="12" y2="12" stroke="#FCA311"></line>
+        <line x1="12" y1="16" x2="12.01" y2="16" stroke="#FCA311"></line>
+      </svg>
+      
+      <!-- Error Code -->
+      <h1 class="error-code" aria-label="Erreur 404">404</h1>
+      
+      <!-- Error Title -->
+      <h2 class="error-title">Page non trouvée</h2>
+      
+      <!-- Error Message -->
+      <p class="error-message">
+        Oups ! La page que vous recherchez semble avoir disparu dans le cyberespace.
+        Elle a peut-être été déplacée ou n'existe plus.
+      </p>
+      
+      <!-- Actions -->
+      <div class="error-actions">
+        <a href="index.html" class="btn btn--primary btn--large">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          Retour à l'accueil
+        </a>
+        
+        <a href="contact.html" class="btn btn--secondary btn--large">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          Me contacter
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script>
+    // Update current year in footer (if present)
+    const currentYearElement = document.getElementById('currentYear');
+    if (currentYearElement) {
+      currentYearElement.textContent = new Date().getFullYear();
+    }
+    
+    // Log 404 error for analytics (optional)
+    console.info('404 Error: Page not found -', window.location.href);
+  </script>
+</body>
+</html>

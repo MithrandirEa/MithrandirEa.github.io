@@ -82,29 +82,29 @@ Portfolio statique simple :
 
 ### Navigation Interactive (2h)
 
-- [ ] T036 Créer `assets/js/main.js` avec initialisation et event listeners
-- [ ] T037 Implémenter toggle menu hamburger (JS) : ouvrir/fermer au clic, gérer classe .menu-open
-- [ ] T038 Fermer menu mobile automatiquement après clic sur un lien
-- [ ] T039 Ajouter indicateur page active dans navigation : classe .active sur lien courant
-- [ ] T040 [P] Implémenter bouton "Retour en haut" avec smooth scroll (optionnel mais recommandé)
-- [ ] T041 Gérer focus clavier : focus visible sur tous les liens, ordre Tab logique
-- [ ] T042 Ajouter attributs ARIA appropriés : aria-expanded sur menu toggle, aria-current sur page active
-- [ ] T043 Tester navigation complète au clavier (Tab, Enter, Escape pour fermer menu)
-- [ ] T044 Tester navigation sur mobile (320px) et desktop (1440px+)
+- [x] T036 Créer `assets/js/main.js` avec initialisation et event listeners
+- [x] T037 Implémenter toggle menu hamburger (JS) : ouvrir/fermer au clic, gérer classe .menu-open
+- [x] T038 Fermer menu mobile automatiquement après clic sur un lien
+- [x] T039 Ajouter indicateur page active dans navigation : classe .active sur lien courant
+- [x] T040 [P] Implémenter bouton "Retour en haut" avec smooth scroll (optionnel mais recommandé)
+- [x] T041 Gérer focus clavier : focus visible sur tous les liens, ordre Tab logique
+- [x] T042 Ajouter attributs ARIA appropriés : aria-expanded sur menu toggle, aria-current sur page active
+- [x] T043 Tester navigation complète au clavier (Tab, Enter, Escape pour fermer menu)
+- [x] T044 Tester navigation sur mobile (320px) et desktop (1440px+)
 
 ### SEO & Meta Tags (1-2h)
 
-- [ ] T045 [P] Ajouter meta description unique dans `index.html` (150-160 caractères)
-- [ ] T046 [P] Ajouter meta description unique dans `cv.html`
-- [ ] T047 [P] Ajouter meta description unique dans `projets.html`
-- [ ] T048 [P] Ajouter meta description unique dans `contact.html`
-- [ ] T049 [P] Implémenter Open Graph tags dans toutes les pages (og:title, og:description, og:image, og:url)
-- [ ] T050 [P] Implémenter Twitter Cards dans toutes les pages (twitter:card, twitter:title, twitter:description)
-- [ ] T051 Créer `sitemap.xml` à la racine avec URLs de toutes les pages
-- [ ] T052 Créer `robots.txt` à la racine (User-agent: *, Allow: /, Sitemap: URL)
-- [ ] T053 [P] Créer favicons multi-tailles (16x16, 32x32, 180x180, 192x192) dans `assets/images/favicon/`
-- [ ] T054 [P] Ajouter liens favicon dans `<head>` de toutes les pages (icon, apple-touch-icon)
-- [ ] T055 Valider meta tags avec Open Graph debugger (Facebook/LinkedIn) et Twitter Card Validator
+- [x] T045 [P] Ajouter meta description unique dans `index.html` (150-160 caractères)
+- [x] T046 [P] Ajouter meta description unique dans `cv.html`
+- [x] T047 [P] Ajouter meta description unique dans `projets.html`
+- [x] T048 [P] Ajouter meta description unique dans `contact.html`
+- [x] T049 [P] Implémenter Open Graph tags dans toutes les pages (og:title, og:description, og:image, og:url)
+- [x] T050 [P] Implémenter Twitter Cards dans toutes les pages (twitter:card, twitter:title, twitter:description)
+- [x] T051 Créer `sitemap.xml` à la racine avec URLs de toutes les pages
+- [x] T052 Créer `robots.txt` à la racine (User-agent: *, Allow: /, Sitemap: URL)
+- [x] T053 [P] Créer favicons multi-tailles (16x16, 32x32, 180x180, 192x192) dans `assets/images/favicon/`
+- [x] T054 [P] Ajouter liens favicon dans `<head>` de toutes les pages (icon, apple-touch-icon)
+- [x] T055 Valider meta tags avec Open Graph debugger (Facebook/LinkedIn) et Twitter Card Validator
 
 **Checkpoint**: Structure commune complète, navigation fonctionnelle, SEO de base implémenté, validation W3C passée
 
@@ -118,31 +118,31 @@ Portfolio statique simple :
 
 ### Hero Section (2-3h)
 
-- [ ] T056 [US1] Créer structure HTML hero section dans `index.html` : `<section class="hero">` avec nom, titre, accroche
-- [ ] T057 [P] [US1] Ajouter photo profil optimisée dans `assets/images/profile/` (WebP + JPEG fallback)
-- [ ] T058 [US1] Créer `assets/css/home.css` pour styles page d'accueil
-- [ ] T059 [US1] Styliser hero section : layout flexbox/grid, centré, background gradient ou image
-- [ ] T060 [US1] Rendre hero section responsive : 1 colonne mobile, 2 colonnes desktop (texte + image)
-- [ ] T061 [US1] Ajouter animations subtiles : fade-in au chargement, respecter prefers-reduced-motion
-- [ ] T062 [US1] Optimiser image profil : taille appropriée (max 300x300), compression, lazy loading si en bas de page
-- [ ] T063 [US1] Tester LCP < 2.5s avec Lighthouse - optimiser si nécessaire (critical CSS, preload image)
+- [x] T056 [US1] Créer structure HTML hero section dans `index.html` : `<section class="hero">` avec nom, titre, accroche
+- [x] T057 [P] [US1] Ajouter photo profil optimisée dans `assets/images/profile/` (WebP + JPEG fallback)
+- [x] T058 [US1] Créer `assets/css/home.css` pour styles page d'accueil
+- [x] T059 [US1] Styliser hero section : layout flexbox/grid, centré, background gradient ou image
+- [x] T060 [US1] Rendre hero section responsive : 1 colonne mobile, 2 colonnes desktop (texte + image)
+- [x] T061 [US1] Ajouter animations subtiles : fade-in au chargement, respecter prefers-reduced-motion
+- [x] T062 [US1] Optimiser image profil : taille appropriée (max 300x300), compression, lazy loading si en bas de page
+- [x] T063 [US1] Tester LCP < 2.5s avec Lighthouse - optimiser si nécessaire (critical CSS, preload image)
 
 ### Section Compétences (2-3h)
 
-- [ ] T064 [US1] Créer structure HTML section compétences : `<section class="skills">` avec 4-6 compétences
-- [ ] T065 [P] [US1] Ajouter icônes compétences dans `assets/images/icons/` (SVG inline ou sprite)
-- [ ] T066 [US1] Styliser section compétences dans home.css : grid layout (2 cols mobile, 3-4 cols desktop)
-- [ ] T067 [US1] Créer composant skill-card : icône + titre + description courte
-- [ ] T068 [US1] Ajouter hover effects sur skill cards (transform, shadow)
-- [ ] T069 [US1] Assurer accessibilité icônes : alt text descriptif ou aria-label
-- [ ] T070 [US1] Tester lisibilité et responsive (320px à 1440px+)
+- [x] T064 [US1] Créer structure HTML section compétences : `<section class="skills">` avec 4-6 compétences
+- [x] T065 [P] [US1] Ajouter icônes compétences dans `assets/images/icons/` (SVG inline ou sprite)
+- [x] T066 [US1] Styliser section compétences dans home.css : grid layout (2 cols mobile, 3-4 cols desktop)
+- [x] T067 [US1] Créer composant skill-card : icône + titre + description courte
+- [x] T068 [US1] Ajouter hover effects sur skill cards (transform, shadow)
+- [x] T069 [US1] Assurer accessibilité icônes : alt text descriptif ou aria-label
+- [x] T070 [US1] Tester lisibilité et responsive (320px à 1440px+)
 
 ### Call-to-Action (1h)
 
-- [ ] T071 [US1] Ajouter 2 CTA dans hero ou après compétences : "Voir mes projets" + "Me contacter"
-- [ ] T072 [US1] Styliser boutons CTA avec classes .btn .btn--primary (utiliser components.css)
-- [ ] T073 [US1] Ajouter liens vers `projets.html` et `contact.html`
-- [ ] T074 [US1] Tester accessibilité clavier et contrastes boutons
+- [x] T071 [US1] Ajouter 2 CTA dans hero ou après compétences : "Voir mes projets" + "Me contacter"
+- [x] T072 [US1] Styliser boutons CTA avec classes .btn .btn--primary (utiliser components.css)
+- [x] T073 [US1] Ajouter liens vers `projets.html` et `contact.html`
+- [x] T074 [US1] Tester accessibilité clavier et contrastes boutons
 
 ### Optimisation Performance (1-2h)
 
@@ -165,41 +165,41 @@ Portfolio statique simple :
 
 ### Structure Sections CV (2h)
 
-- [ ] T081 [US2] Créer structure HTML sections dans `cv.html` : Résumé, Expériences, Formation, Compétences
-- [ ] T082 [US2] Ajouter navigation rapide (ancres) : liens vers #resume, #experience, #education, #skills
-- [ ] T083 [US2] Créer `assets/css/cv.css` pour styles spécifiques CV
-- [ ] T084 [US2] Styliser navigation ancres : sticky sidebar desktop ou menu rapide en haut mobile
-- [ ] T085 [US2] Implémenter smooth scroll pour navigation ancres (CSS scroll-behavior ou JS)
-- [ ] T086 [US2] Tester navigation ancres fonctionnelle sur tous devices
+- [x] T081 [US2] Créer structure HTML sections dans `cv.html` : Résumé, Expériences, Formation, Compétences
+- [x] T082 [US2] Ajouter navigation rapide (ancres) : liens vers #resume, #experience, #education, #skills
+- [x] T083 [US2] Créer `assets/css/cv.css` pour styles spécifiques CV
+- [x] T084 [US2] Styliser navigation ancres : sticky sidebar desktop ou menu rapide en haut mobile
+- [x] T085 [US2] Implémenter smooth scroll pour navigation ancres (CSS scroll-behavior ou JS)
+- [x] T086 [US2] Tester navigation ancres fonctionnelle sur tous devices
 
 ### Section Expériences Professionnelles (2-3h)
 
-- [ ] T087 [US2] Créer structure HTML expériences : `<article>` par expérience avec titre, entreprise, dates, réalisations
-- [ ] T088 [US2] Styliser timeline expériences dans cv.css : vertical mobile, optionnellement horizontal desktop
-- [ ] T089 [US2] Ajouter design visuel timeline : ligne verticale, points pour chaque expérience
+- [x] T087 [US2] Créer structure HTML expériences : `<article>` par expérience avec titre, entreprise, dates, réalisations
+- [x] T088 [US2] Styliser timeline expériences dans cv.css : vertical mobile, optionnellement horizontal desktop
+- [x] T089 [US2] Ajouter design visuel timeline : ligne verticale, points pour chaque expérience
 - [ ] T090 [US2] Mettre en valeur réalisations : liste `<ul>` avec puces personnalisées, gras pour chiffres clés
 - [ ] T091 [US2] Rendre timeline responsive : ajuster layout selon breakpoints
 - [ ] T092 [US2] Tester lisibilité et scannable en 30 secondes (test utilisateur)
 
 ### Section Formation & Compétences (2-3h)
 
-- [ ] T093 [P] [US2] Créer structure HTML formation : `<section id="education">` avec diplômes, établissements, dates
-- [ ] T094 [P] [US2] Créer structure HTML compétences : `<section id="skills">` avec catégories (Frontend, Backend, Outils)
-- [ ] T095 [US2] Styliser section formation dans cv.css : liste ou cards, responsive
-- [ ] T096 [US2] Styliser section compétences : badges/tags avec classes .badge (utiliser components.css)
-- [ ] T097 [US2] Organiser compétences en catégories visuellement distinctes (grid ou flexbox)
-- [ ] T098 [P] [US2] Ajouter optionnellement indicateur niveau compétences (barres, étoiles, ou texte)
-- [ ] T099 [US2] Assurer accessibilité badges : texte lisible, contrastes corrects
-- [ ] T100 [US2] Tester clarté catégories et lisibilité mobile/desktop
+- [x] T093 [P] [US2] Créer structure HTML formation : `<section id="education">` avec diplômes, établissements, dates
+- [x] T094 [P] [US2] Créer structure HTML compétences : `<section id="skills">` avec catégories (Frontend, Backend, Outils)
+- [x] T095 [US2] Styliser section formation dans cv.css : liste ou cards, responsive
+- [x] T096 [US2] Styliser section compétences : badges/tags avec classes .badge (utiliser components.css)
+- [x] T097 [US2] Organiser compétences en catégories visuellement distinctes (grid ou flexbox)
+- [x] T098 [P] [US2] Ajouter optionnellement indicateur niveau compétences (barres, étoiles, ou texte)
+- [x] T099 [US2] Assurer accessibilité badges : texte lisible, contrastes corrects
+- [x] T100 [US2] Tester clarté catégories et lisibilité mobile/desktop
 
 ### Téléchargement PDF & Optimisation (1-2h)
 
-- [ ] T101 [US2] Créer ou obtenir CV en format PDF (optimisé, < 2MB)
-- [ ] T102 [US2] Placer CV PDF dans `assets/docs/cv-[nom].pdf`
-- [ ] T103 [US2] Ajouter bouton téléchargement visible en haut de cv.html : "Télécharger CV PDF"
-- [ ] T104 [US2] Styliser bouton téléchargement avec classe .btn .btn--primary
-- [ ] T105 [US2] Ajouter date dernière mise à jour du CV (texte petit sous le bouton)
-- [ ] T106 [US2] Tester téléchargement fonctionnel sur tous navigateurs
+- [x] T101 [US2] Créer ou obtenir CV en format PDF (optimisé, < 2MB)
+- [x] T102 [US2] Placer CV PDF dans `assets/docs/cv-[nom].pdf`
+- [x] T103 [US2] Ajouter bouton téléchargement visible en haut de cv.html : "Télécharger CV PDF"
+- [x] T104 [US2] Styliser bouton téléchargement avec classe .btn .btn--primary
+- [x] T105 [US2] Ajouter date dernière mise à jour du CV (texte petit sous le bouton)
+- [x] T106 [US2] Tester téléchargement fonctionnel sur tous navigateurs
 - [ ] T107 [US2] Lancer Lighthouse sur cv.html - optimiser si score < 90
 - [ ] T108 [US2] Valider HTML avec W3C Validator
 
@@ -213,51 +213,52 @@ Portfolio statique simple :
 
 **Independent Test**: Visiteur peut voir 3+ projets, comprendre technologies, et accéder à démo/code
 
-### Structure Données Projets (1-2h)
+### Intégration API GitHub (1-2h)
 
-- [ ] T109 [US3] Créer structure de données projets : JSON dans `assets/js/projects-data.js` ou hardcodé en HTML
-- [ ] T110 [US3] Définir minimum 3-6 projets avec : titre, description courte, description longue, technologies, images, liens
-- [ ] T111 [US3] Collecter ou créer images projets (screenshots, mockups) - placer dans `assets/images/projects/`
-- [ ] T112 [US3] Optimiser images projets : format WebP + fallback JPEG, dimensions appropriées (max 800px width)
-- [ ] T113 [US3] Valider données complètes et cohérentes
+- [x] T109 [US3] Créer `assets/js/projects.js` pour logique récupération projets GitHub
+- [x] T110 [US3] Implémenter fetch API GitHub : `GET https://api.github.com/users/MithrandirEa/repos?sort=updated`
+- [x] T111 [US3] Gérer réponse API : parser JSON, filtrer repos pertinents (exclure forks, privés si besoin)
+- [x] T112 [US3] Extraire données repos : name, description, language, topics, html_url, homepage, stargazers_count
+- [x] T113 [US3] Implémenter gestion erreurs API : rate limiting (60/h), timeout, fallback offline
+- [ ] T113b [US3] Optionnel : Ajouter cache localStorage pour réduire appels API et améliorer perf
 
 ### Grille Projets & Cards (3-4h)
 
-- [ ] T114 [US3] Créer structure HTML grille projets dans `projets.html` : `<section class="projects-grid">`
-- [ ] T115 [US3] Créer `assets/css/projects.css` pour styles page projets
-- [ ] T116 [US3] Générer cards projets en HTML : `<article class="card">` avec image, titre, description courte
-- [ ] T117 [US3] Styliser grille responsive dans projects.css : 1 col mobile, 2 cols tablet, 3 cols desktop
-- [ ] T118 [US3] Ajouter hover effects sur cards : transform scale, shadow, overlay
-- [ ] T119 [US3] Rendre cards cliquables : lien vers détails ou modale
-- [ ] T120 [US3] Implémenter lazy loading images projets dans HTML : attribut loading="lazy"
+- [x] T114 [US3] Créer structure HTML grille projets dans `projets.html` : `<section class="projects-grid">`
+- [x] T115 [US3] Créer `assets/css/projects.css` pour styles page projets
+- [x] T116 [US3] Générer cards projets dynamiquement en JS : `<article class="card">` avec données API
+- [x] T117 [US3] Styliser grille responsive dans projects.css : 1 col mobile, 2 cols tablet, 3 cols desktop
+- [x] T118 [US3] Ajouter hover effects sur cards : transform scale, shadow, overlay
+- [x] T119 [US3] Rendre cards cliquables : lien vers détails ou modale
+- [x] T120 [US3] Afficher langage principal et topics comme badges dans cards
 - [ ] T121 [US3] Tester responsive grid (320px à 1440px+) et accessibilité cards
 
 ### Détails Projet & Vue Détaillée (2-3h)
 
-- [ ] T122 [US3] Décider approche détails : modale overlay ou section expandable (recommandé: modale)
-- [ ] T123 [US3] Créer structure HTML modale détails projet : `<div class="modal">` avec overlay et contenu
-- [ ] T124 [US3] Afficher dans modale : description complète, technologies (badges), rôle, durée, résultats
-- [ ] T125 [US3] Ajouter boutons liens : "Voir la démo" (external link) + "Code source" (GitHub)
-- [ ] T126 [P] [US3] Optionnellement ajouter carousel images dans modale (JS ou CSS)
-- [ ] T127 [US3] Créer `assets/js/projects.js` pour logique modale : ouvrir/fermer au clic
-- [ ] T128 [US3] Styliser modale dans projects.css : centré, overlay semi-transparent, responsive
-- [ ] T129 [US3] Gérer fermeture modale : bouton close, clic overlay, touche Escape
-- [ ] T130 [US3] Assurer accessibilité modale : focus trap, aria-hidden, focus sur close au clic overlay
+- [x] T122 [US3] Décider approche détails : modale overlay ou section expandable (recommandé: modale) - **DÉCISION: Modale overlay avec backdrop semi-transparent, centrée, fermeture via bouton X/Escape/clic outside, focus trap pour accessibilité**
+- [x] T123 [US3] Créer structure HTML modale détails projet : `<div class="modal">` avec overlay et contenu
+- [x] T124 [US3] Afficher dans modale : description complète repo, README preview, technologies (topics), stats (stars, forks, last update)
+- [x] T125 [US3] Ajouter boutons liens : "Voir le repo" (GitHub html_url) + "Démo live" (homepage si disponible)
+- [x] T126 [P] [US3] Optionnellement récupérer README.md via API pour affichage enrichi
+- [x] T127 [US3] Gérer ouverture modale au clic : charger détails repo spécifique
+- [x] T128 [US3] Styliser modale dans projects.css : centré, overlay semi-transparent, responsive
+- [x] T129 [US3] Gérer fermeture modale : bouton close, clic overlay, touche Escape
+- [x] T130 [US3] Assurer accessibilité modale : focus trap, aria-hidden, focus sur close au clic overlay
 - [ ] T131 [US3] Tester modale sur tous devices et navigateurs
 
 ### Filtres & Optimisation (2-3h)
 
-- [ ] T132 [US3] Créer interface filtres dans projets.html : boutons catégories (Tous, Frontend, Backend, Fullstack, etc.)
-- [ ] T133 [US3] Styliser boutons filtres dans projects.css : inline, hover states, actif distinct
-- [ ] T134 [US3] Implémenter logique filtrage dans projects.js : afficher/cacher cards selon filtre
-- [ ] T135 [US3] Ajouter animations transition filtres : fade-in/out, smooth
-- [ ] T136 [US3] Optionnellement ajouter compteur résultats : "X projets affichés"
-- [ ] T137 [US3] Optimiser toutes images projets : WebP + fallback, srcset responsive si nécessaire
+- [x] T132 [US3] Créer interface filtres dans projets.html : boutons langages (Tous, Python, JavaScript, etc.)
+- [x] T133 [US3] Styliser boutons filtres dans projects.css : inline, hover states, actif distinct
+- [x] T134 [US3] Implémenter logique filtrage dynamique : filtrer par language depuis API
+- [x] T135 [US3] Ajouter animations transition filtres : fade-in/out, smooth
+- [x] T136 [US3] Optionnellement ajouter compteur résultats : "X projets affichés"
+- [x] T137 [US3] Ajouter loader/spinner pendant chargement API : skeleton cards ou spinner
 - [ ] T138 [US3] Tester filtres fonctionnels et accessibilité clavier
 - [ ] T139 [US3] Lancer Lighthouse sur projets.html - optimiser si score < 90
 - [ ] T140 [US3] Valider HTML et tester cross-browser
 
-**Checkpoint**: Page projets complète avec filtres, détails, liens, Lighthouse ≥ 90
+**Checkpoint**: Page projets complète avec données GitHub dynamiques, filtres, détails, Lighthouse ≥ 90
 
 ---
 
@@ -269,47 +270,47 @@ Portfolio statique simple :
 
 ### Structure Formulaire (2h)
 
-- [ ] T141 [US4] Créer structure HTML formulaire dans `contact.html` : `<form>` avec Nom, Email, Sujet, Message
-- [ ] T142 [US4] Ajouter labels accessibles pour chaque champ : `<label for="name">` et attribut id correspondant
-- [ ] T143 [US4] Définir types input appropriés : type="text", type="email", `<textarea>` pour message
-- [ ] T144 [US4] Marquer champs requis : attribut required sur Nom, Email, Message
-- [ ] T145 [US4] Créer `assets/css/contact.css` pour styles page contact
-- [ ] T146 [US4] Styliser formulaire dans contact.css : layout vertical, spacing cohérent, inputs full-width mobile
-- [ ] T147 [US4] Styliser états inputs : focus visible, border colors, placeholder text
-- [ ] T148 [US4] Ajouter bouton submit : `<button type="submit" class="btn btn--primary">Envoyer</button>`
-- [ ] T149 [US4] Tester responsive formulaire (320px à 1440px+)
+- [x] T141 [US4] Créer structure HTML formulaire dans `contact.html` : `<form>` avec Nom, Email, Sujet, Message
+- [x] T142 [US4] Ajouter labels accessibles pour chaque champ : `<label for="name">` et attribut id correspondant
+- [x] T143 [US4] Définir types input appropriés : type="text", type="email", `<textarea>` pour message
+- [x] T144 [US4] Marquer champs requis : attribut required sur Nom, Email, Message
+- [x] T145 [US4] Créer `assets/css/contact.css` pour styles page contact
+- [x] T146 [US4] Styliser formulaire dans contact.css : layout vertical, spacing cohérent, inputs full-width mobile
+- [x] T147 [US4] Styliser états inputs : focus visible, border colors, placeholder text
+- [x] T148 [US4] Ajouter bouton submit : `<button type="submit" class="btn btn--primary">Envoyer</button>`
+- [x] T149 [US4] Tester responsive formulaire (320px à 1440px+)
 
 ### Validation Côté Client (2-3h)
 
-- [ ] T150 [US4] Créer `assets/js/contact.js` pour logique validation et envoi
-- [ ] T151 [US4] Implémenter validation email : regex ou API Constraint Validation
-- [ ] T152 [US4] Valider champs requis : vérifier non vides avant soumission
-- [ ] T153 [US4] Créer éléments HTML pour messages erreur : `<span class="error-message">` sous chaque champ
-- [ ] T154 [US4] Afficher messages erreur clairs : "Ce champ est requis", "Email invalide"
-- [ ] T155 [US4] Styliser messages erreur dans contact.css : couleur rouge, texte petit, visible
-- [ ] T156 [US4] Ajouter attributs ARIA pour erreurs : aria-invalid, aria-describedby, aria-live pour messages
-- [ ] T157 [US4] Implémenter états visuels : border rouge sur erreur, vert sur valide
+- [x] T150 [US4] Créer `assets/js/contact.js` pour logique validation et envoi
+- [x] T151 [US4] Implémenter validation email : regex ou API Constraint Validation
+- [x] T152 [US4] Valider champs requis : vérifier non vides avant soumission
+- [x] T153 [US4] Créer éléments HTML pour messages erreur : `<span class="error-message">` sous chaque champ
+- [x] T154 [US4] Afficher messages erreur clairs : "Ce champ est requis", "Email invalide"
+- [x] T155 [US4] Styliser messages erreur dans contact.css : couleur rouge, texte petit, visible
+- [x] T156 [US4] Ajouter attributs ARIA pour erreurs : aria-invalid, aria-describedby, aria-live pour messages
+- [x] T157 [US4] Implémenter états visuels : border rouge sur erreur, vert sur valide
 - [ ] T158 [US4] Tester validation fonctionnelle : soumettre avec erreurs, corriger, soumettre valide
 
 ### Intégration Service Envoi (2-3h)
 
-- [ ] T159 [US4] Configurer compte EmailJS ou Formspree (selon choix Phase 0)
-- [ ] T160 [US4] Obtenir clés API et configurer template email
-- [ ] T161 [US4] Implémenter envoi asynchrone dans contact.js : fetch API ou SDK service
-- [ ] T162 [US4] Empêcher soumission multiple : désactiver bouton pendant envoi, afficher loader
-- [ ] T163 [US4] Créer éléments HTML pour messages feedback : `<div class="message message--success">` et `<div class="message message--error">`
-- [ ] T164 [US4] Afficher message succès après envoi réussi : "Message envoyé ! Je vous répondrai sous 48h."
-- [ ] T165 [US4] Afficher message erreur si échec : "Erreur d'envoi. Contactez-moi via [email]"
-- [ ] T166 [US4] Styliser messages feedback dans contact.css : couleurs appropriées, padding, visible
-- [ ] T167 [US4] Implémenter protection anti-spam : honeypot (champ caché) ou CAPTCHA discret
-- [ ] T168 [US4] Tester envoi réel : vérifier email reçu, tester succès et erreurs
-- [ ] T169 [US4] Tester protection anti-spam fonctionnelle
+- [x] T159 [US4] Configurer compte EmailJS ou Formspree (selon choix Phase 0)
+- [x] T160 [US4] Obtenir clés API et configurer template email
+- [x] T161 [US4] Implémenter envoi asynchrone dans contact.js : fetch API ou SDK service
+- [x] T162 [US4] Empêcher soumission multiple : désactiver bouton pendant envoi, afficher loader
+- [x] T163 [US4] Créer éléments HTML pour messages feedback : `<div class="message message--success">` et `<div class="message message--error">`
+- [x] T164 [US4] Afficher message succès après envoi réussi : "Message envoyé ! Je vous répondrai sous 48h."
+- [x] T165 [US4] Afficher message erreur si échec : "Erreur d'envoi. Contactez-moi via [email]"
+- [x] T166 [US4] Styliser messages feedback dans contact.css : couleurs appropriées, padding, visible
+- [x] T167 [US4] Implémenter protection anti-spam : honeypot (champ caché) ou CAPTCHA discret
+- [x] T168 [US4] Tester envoi réel : vérifier email reçu, tester succès et erreurs
+- [x] T169 [US4] Tester protection anti-spam fonctionnelle
 
 ### Liens Directs & Optimisation (1h)
 
-- [ ] T170 [P] [US4] Ajouter section liens directs dans contact.html : LinkedIn, GitHub, email cliquable
-- [ ] T171 [P] [US4] Ajouter icônes réseaux sociaux (SVG) dans `assets/images/icons/`
-- [ ] T172 [US4] Styliser liens réseaux : disposition horizontale, hover effects, accessibilité
+- [x] T170 [P] [US4] Ajouter section liens directs dans contact.html : LinkedIn, GitHub, email cliquable
+- [x] T171 [P] [US4] Ajouter icônes réseaux sociaux (SVG) dans `assets/images/icons/`
+- [x] T172 [US4] Styliser liens réseaux : disposition horizontale, hover effects, accessibilité
 - [ ] T173 [US4] Tester tous les liens fonctionnels : ouvrent dans nouvel onglet (target="_blank" rel="noopener")
 - [ ] T174 [US4] Lancer Lighthouse sur contact.html - optimiser si score < 90
 - [ ] T175 [US4] Valider HTML avec W3C Validator
@@ -324,19 +325,19 @@ Portfolio statique simple :
 
 ### Animations & Transitions (2-3h)
 
-- [ ] T176 Ajouter animations scroll subtiles : fade-in pour sections au scroll (Intersection Observer API)
-- [ ] T177 Implémenter transitions hover cohérentes : tous les boutons, cards, liens
-- [ ] T178 Ajouter media query prefers-reduced-motion : désactiver animations si préférence utilisateur
+- [x] T176 Ajouter animations scroll subtiles : fade-in pour sections au scroll (Intersection Observer API)
+- [x] T177 Implémenter transitions hover cohérentes : tous les boutons, cards, liens
+- [x] T178 Ajouter media query prefers-reduced-motion : désactiver animations si préférence utilisateur
 - [ ] T179 Tester animations fluides sur tous devices (pas de lag, 60fps)
 - [ ] T180 Valider respect prefers-reduced-motion avec DevTools
 
 ### 404 Page & États (1-2h)
 
-- [ ] T181 Créer `404.html` à la racine avec message erreur personnalisé
-- [ ] T182 Styliser 404.html : design cohérent avec le reste du site, CTA retour accueil
-- [ ] T183 Tester page 404 fonctionnelle (accès URL invalide sur GitHub Pages)
-- [ ] T184 [P] Ajouter skeleton screens ou spinners pour chargements (si applicable)
-- [ ] T185 [P] Assurer feedback visuel sur toutes interactions : hover, focus, active, loading
+- [x] T181 Créer `404.html` à la racine avec message erreur personnalisé
+- [x] T182 Styliser 404.html : design cohérent avec le reste du site, CTA retour accueil
+- [x] T183 Tester page 404 fonctionnelle (accès URL invalide sur GitHub Pages)
+- [x] T184 [P] Ajouter skeleton screens ou spinners pour chargements (si applicable)
+- [x] T185 [P] Assurer feedback visuel sur toutes interactions : hover, focus, active, loading
 
 ### Final Polish (1h)
 

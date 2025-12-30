@@ -8,33 +8,44 @@
   
   <!-- SEO Meta Tags -->
   <title>Clément SCIPION - Portfolio Professionnel | Développeur Python</title>
-  <meta name="description" content="Portfolio professionnel de Clément SCIPION. Découvrez mes projets, compétences et expériences en développement Python. Développeur passionné par la création de solutions numériques innovantes.">
+  <meta name="description" content="Développeur Python passionné. Découvrez mon portfolio professionnel, mes projets innovants et compétences techniques. Transformons vos idées en solutions.">
   <meta name="keywords" content="portfolio, développeur python, développement python, projets, compétences, Clément SCIPION">
   <meta name="author" content="Clément SCIPION">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mithrandirea.github.io/">
-  <meta property="og:title" content="Clément SCIPION - Portfolio Professionnel">
-  <meta property="og:description" content="Portfolio professionnel. Découvrez mes projets et compétences en développement Python.">
+  <meta property="og:title" content="Clément SCIPION - Portfolio Professionnel | Développeur Python">
+  <meta property="og:description" content="Développeur Python passionné. Découvrez mon portfolio professionnel, mes projets innovants et compétences techniques. Transformons vos idées en solutions.">
   <meta property="og:image" content="https://mithrandirea.github.io/assets/images/og-image.jpg">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Clément SCIPION - Portfolio">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://mithrandirea.github.io/">
   <meta name="twitter:title" content="Clément SCIPION - Portfolio Professionnel">
-  <meta name="twitter:description" content="Portfolio professionnel. Découvrez mes projets et compétences en développement Python.">
+  <meta name="twitter:description" content="Développeur Python passionné. Découvrez mon portfolio professionnel, mes projets innovants et compétences techniques.">
   <meta name="twitter:image" content="https://mithrandirea.github.io/assets/images/twitter-card.jpg">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon/favicon-96x96.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#14213D">
+  <meta name="theme-color" content="#14213D">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Preload Critical Resources -->
+  <link rel="preload" as="image" href="assets/images/profile/profile.webp" type="image/webp">
+  <link rel="preload" as="image" href="assets/images/profile/profile.jpg" type="image/jpeg">
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/css/variables.css">
@@ -49,6 +60,9 @@
   <meta name="robots" content="index, follow">
 </head>
 <body>
+  <!-- Skip to main content (accessibility) -->
+  <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
+  
   <!-- Header -->
   <header class="header">
     <div class="header__container">
@@ -92,9 +106,31 @@
     <!-- Hero Section -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero__container">
-        <h1 id="hero-title" class="hero__title">Bienvenue sur mon Portfolio</h1>
-        <p class="hero__subtitle">Développeur Python Passionné</p>
-        <!-- Contenu sera ajouté ultérieurement -->
+        <div class="hero__content">
+          <h1 id="hero-title" class="hero__title">
+            Bonjour, je suis <span class="hero__name">Clément SCIPION</span>
+          </h1>
+          <p class="hero__subtitle">Développeur Python Passionné</p>
+          <p class="hero__tagline">
+            Je transforme vos idées en solutions numériques innovantes. 
+            Spécialisé dans le développement d'applications Python robustes et performantes.
+          </p>
+          <div class="hero__cta">
+            <a href="projets.html" class="btn btn--primary">Voir mes projets</a>
+            <a href="contact.html" class="btn btn--outline-light">Me contacter</a>
+          </div>
+        </div>
+        <div class="hero__image">
+          <picture>
+            <source srcset="assets/images/profile/profile.webp" type="image/webp">
+            <img src="assets/images/profile/profile.jpg" 
+                 alt="Clément SCIPION - Développeur Python" 
+                 class="hero__photo"
+                 width="300" 
+                 height="300"
+                 loading="eager">
+          </picture>
+        </div>
       </div>
     </section>
 
@@ -102,7 +138,79 @@
     <section class="skills" aria-labelledby="skills-title">
       <div class="skills__container">
         <h2 id="skills-title" class="skills__title">Compétences Clés</h2>
-        <!-- Contenu sera ajouté ultérieurement -->
+        
+        <div class="skills__grid">
+          <!-- Skill 1: Python Development -->
+          <article class="skill-card">
+            <div class="skill-card__icon" aria-hidden="true">
+              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Python</title><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg>
+            </div>
+            <h3 class="skill-card__title">Développement Python</h3>
+            <p class="skill-card__description">
+              Expertise en Python avec frameworks modernes. Développement d'applications robustes et performantes.
+            </p>
+          </article>
+
+          <!-- Skill 2: Web Development -->
+          <article class="skill-card">
+            <div class="skill-card__icon skill-card__icon--multiple" aria-hidden="true">
+              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="skill-card__icon-item"><title>Django</title><path d="M11.146 0h3.924v18.166c-2.013.382-3.491.535-5.096.535-4.791 0-7.288-2.166-7.288-6.32 0-4.002 2.65-6.6 6.753-6.6.637 0 1.121.05 1.707.203zm0 9.143a3.894 3.894 0 00-1.325-.204c-1.988 0-3.134 1.223-3.134 3.365 0 2.09 1.096 3.236 3.109 3.236.433 0 .79-.025 1.35-.102V9.142zM21.314 6.06v9.098c0 3.134-.229 4.638-.917 5.937-.637 1.249-1.478 2.039-3.211 2.905l-3.644-1.733c1.733-.815 2.574-1.53 3.109-2.625.561-1.121.739-2.421.739-5.835V6.059h3.924zM17.39.021h3.924v4.026H17.39z"/></svg>
+              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="skill-card__icon-item"><title>Flask</title><path d="M3.49 12.653c-.146-.146-.146-.383 0-.53l7.287-7.287c.147-.147.383-.147.53 0l7.287 7.287c.146.146.146.383 0 .53l-7.287 7.287c-.147.146-.383.146-.53 0l-7.287-7.287zm5.062-10.115l-3.96 3.96 3.96 3.96 3.96-3.96-3.96-3.96zM12 2.538L9.462 5.076 12 7.614l2.538-2.538L12 2.538zm4.452 4.452L13.914 9.528 16.452 12.066l2.538-2.538-2.538-2.538zm-10.104 0L3.81 9.528 6.348 12.066l2.538-2.538L6.348 6.99zm5.062 5.062l-2.538 2.538 2.538 2.538 2.538-2.538-2.538-2.538zM12 21.462l2.538-2.538L12 16.386l-2.538 2.538L12 21.462zm4.452-4.452l2.538-2.538-2.538-2.538-2.538 2.538 2.538 2.538zm-10.104 0l2.538-2.538-2.538-2.538-2.538 2.538 2.538 2.538z"/></svg>
+              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="skill-card__icon-item"><title>FastAPI</title><path="M12 0C5.375 0 0 5.375 0 12c0 6.627 5.375 12 12 12 6.626 0 12-5.373 12-12 0-6.625-5.373-12-12-12zm-.624 21.62v-7.528H7.19L13.203 2.38v7.528h4.029L11.376 21.62z"/></svg>
+            </div>
+            <h3 class="skill-card__title">Développement Web</h3>
+            <p class="skill-card__description">
+              Création d'applications web avec Django et Flask. Architecture RESTful et interfaces modernes.
+            </p>
+          </article>
+
+          <!-- Skill 3: Data Analysis -->
+          <article class="skill-card">
+            <div class="skill-card__icon skill-card__icon--multiple" aria-hidden="true">
+              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="skill-card__icon-item"><title>pandas</title><path d="M16.922 0h2.623v18.104h-2.623zm-4.126 12.94h2.623v2.57h-2.623zm0-7.037h2.623v5.446h-2.623zm0 11.197h2.623v5.446h-2.623zM4.456 5.896h2.622V24H4.455zm4.213 2.559h2.623v2.57H8.67zm0 4.151h2.623v5.447H8.67zm0-11.187h2.623v5.446H8.67Z"/></svg>
+              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="skill-card__icon-item"><title>NumPy</title><path d="M10.315 4.876L6.3043 2.8918l-4.401 2.0734.00043 4.8368 4.31287 2.0595 4.102-2.078zm.00032 4.433l-4.1019 2.0777 4.1896 2.0015 4.1026-2.0388zm4.1987 2.0317l-4.0158 2.0207v3.6896l3.9375-2.0585 4.0121-2.0761zm-8.3126.066l-4.10583 2.0763 4.19723 2.0605 4.1351-2.0988zm4.1987-6.4675l-4.1016 2.077 4.1892 2.0012 4.1029-2.0386zm-8.2041.0673l-4.10545 2.0761 4.19723 2.0608 4.1347-2.0992zm8.4395 8.6977l4.0117-2.0302v-3.8242l-4.0396 2.0425zm-8.4564-.0494l-.0002-3.7859-3.99926-2.0344v3.8241zm8.4564-8.7552l4.0114-2.0299V.83207L16.515 2.8744zm-8.4564-.0496l-.0002-3.7861-3.99888-2.034v3.8243z"/></svg>
+              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="skill-card__icon-item"><title>Jupyter</title><path d="M7.157 22.201A1.784 1.799 0 0 1 5.374 24a1.784 1.799 0 0 1-1.784-1.799 1.784 1.799 0 0 1 1.784-1.799 1.784 1.799 0 0 1 1.783 1.799zM20.582 1.427a1.415 1.427 0 0 1-1.416 1.428 1.415 1.427 0 0 1-1.415-1.428A1.415 1.427 0 0 1 19.166 0a1.415 1.427 0 0 1 1.416 1.427zM4.992 3.336A1.047 1.056 0 0 1 3.946 4.39a1.047 1.056 0 0 1-1.047-1.055A1.047 1.056 0 0 1 3.946 2.28a1.047 1.056 0 0 1 1.046 1.056zm7.336 1.517c3.769 0 7.06 1.38 8.768 3.424a9.363 9.363 0 0 0-3.393-4.547 9.238 9.238 0 0 0-5.377-1.728A9.238 9.238 0 0 0 6.95 3.73a9.363 9.363 0 0 0-3.394 4.547c1.707-2.044 4.999-3.424 8.772-3.424zm0 13.295c-3.768 0-7.06-1.381-8.768-3.425a9.363 9.363 0 0 0 3.394 4.547A9.238 9.238 0 0 0 12.33 21a9.238 9.238 0 0 0 5.377-1.729 9.363 9.363 0 0 0 3.393-4.547c-1.707 2.044-4.999 3.425-8.772 3.425z"/></svg>
+            </div>
+            <h3 class="skill-card__title">Analyse de Données</h3>
+            <p class="skill-card__description">
+              Manipulation et visualisation de données avec Pandas, NumPy et Matplotlib. Insights exploitables.
+            </p>
+          </article>
+
+          <!-- Skill 4: API Development -->
+          <article class="skill-card">
+            <div class="skill-card__icon" aria-hidden="true">
+              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>FastAPI</title><path d="M12 0C5.375 0 0 5.375 0 12c0 6.627 5.375 12 12 12 6.626 0 12-5.373 12-12 0-6.625-5.373-12-12-12zm-.624 21.62v-7.528H7.19L13.203 2.38v7.528h4.029L11.376 21.62z"/></svg>
+            </div>
+            <h3 class="skill-card__title">APIs REST</h3>
+            <p class="skill-card__description">
+              Conception et développement d'APIs RESTful. Documentation complète et bonnes pratiques.
+            </p>
+          </article>
+
+          <!-- Skill 5: Database Management -->
+          <article class="skill-card">
+            <div class="skill-card__icon" aria-hidden="true">
+              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Database</title><path d="M12 3c-4.963 0-9 1.343-9 3v12c0 1.657 4.037 3 9 3s9-1.343 9-3V6c0-1.657-4.037-3-9-3zm0 2c3.86 0 7 1.12 7 2s-3.14 2-7 2-7-1.12-7-2 3.14-2 7-2zm-7 5.14C6.72 11.4 9.21 12 12 12s5.28-.6 7-1.86V12c0 .88-3.14 2-7 2s-7-1.12-7-2v-1.86zm0 4C6.72 15.4 9.21 16 12 16s5.28-.6 7-1.86V16c0 .88-3.14 2-7 2s-7-1.12-7-2v-1.86zM5 16.14C6.72 17.4 9.21 18 12 18s5.28-.6 7-1.86V18c0 .88-3.14 2-7 2s-7-1.12-7-2v-1.86z"/></svg>
+            </div>
+            <h3 class="skill-card__title">Bases de Données</h3>
+            <p class="skill-card__description">
+              Gestion de bases SQL et NoSQL. Optimisation des requêtes et modélisation efficace.
+            </p>
+          </article>
+
+          <!-- Skill 6: DevOps & CI/CD -->
+          <article class="skill-card">
+            <div class="skill-card__icon skill-card__icon--multiple" aria-hidden="true">
+              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="skill-card__icon-item"><title>Docker</title><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"/></svg>
+              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="skill-card__icon-item"><title>Git</title><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>
+            </div>
+            <h3 class="skill-card__title">DevOps & CI/CD</h3>
+            <p class="skill-card__description">
+              Automatisation des déploiements. Docker, Git, et pipelines d'intégration continue.
+            </p>
+          </article>
+        </div>
       </div>
     </section>
 

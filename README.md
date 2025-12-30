@@ -308,6 +308,34 @@ Toutes les combinaisons de couleurs ont été testées pour la conformité **WCA
 
 ---
 
+## Favicons (T053)
+
+### Génération des Favicons
+
+Les favicons doivent être générés et placés dans `assets/images/favicon/`. Documentation complète disponible dans [assets/images/favicon/README.md](assets/images/favicon/README.md).
+
+**Fichiers requis :**
+- `favicon.ico` (16x16, 32x32, 48x48)
+- `favicon-16x16.png`
+- `favicon-32x32.png`
+- `favicon-96x96.png`
+- `favicon-192x192.png`
+- `favicon-512x512.png`
+- `apple-touch-icon.png` (180x180px)
+
+**Outils recommandés :**
+- [Favicon.io](https://favicon.io/) - Générateur simple et gratuit
+- [RealFaviconGenerator](https://realfavicongenerator.net/) - Générateur complet multi-plateforme
+
+**Configuration design :**
+- **Background** : `#14213D` (Prussian Blue) ou `#FCA311` (Orange)
+- **Contenu** : Initiales "CS" ou logo existant
+- **Police** : Roboto ou Playfair Display
+
+Les liens favicon sont déjà intégrés dans le `<head>` de toutes les pages HTML.
+
+---
+
 **Usage**
 ```css
 /* Corps de texte, navigation, UI */

@@ -1,0 +1,41 @@
+# robots.txt pour Portfolio Clément SCIPION
+# https://mithrandirea.github.io/
+
+# Autoriser tous les robots d'indexation
+User-agent: *
+Allow: /
+
+# Bloquer l'accès aux fichiers système et répertoires internes
+Disallow: /assets/docs/
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /Portfolio/.specify/
+
+# Sitemap
+Sitemap: https://mithrandirea.github.io/sitemap.xml
+
+# Délai d'exploration (crawl-delay) - optionnel
+# Crawl-delay: 10
+
+# Robots spécifiques (optionnel)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Bloquer les robots de scraping malveillants (optionnel)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

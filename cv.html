@@ -8,7 +8,7 @@
   
   <!-- SEO Meta Tags -->
   <title>Curriculum Vitae - Clément SCIPION | Expériences & Compétences</title>
-  <meta name="description" content="Découvrez mon parcours professionnel, mes expériences, formations et compétences techniques. CV complet de Clément SCIPION, développeur Python passionné et expérimenté.">
+  <meta name="description" content="CV complet de Clément SCIPION, développeur Python. Parcours professionnel, expériences, formations et stack technique. Disponible pour opportunités.">
   <meta name="keywords" content="CV, curriculum vitae, expériences, compétences, formation, développeur python, Clément SCIPION">
   <meta name="author" content="Clément SCIPION">
   
@@ -16,20 +16,27 @@
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://mithrandirea.github.io/cv.html">
   <meta property="og:title" content="CV - Clément SCIPION | Développeur Python">
-  <meta property="og:description" content="Parcours professionnel, expériences et compétences techniques.">
+  <meta property="og:description" content="CV complet de Clément SCIPION, développeur Python. Parcours professionnel, expériences, formations et stack technique. Disponible pour opportunités.">
   <meta property="og:image" content="https://mithrandirea.github.io/assets/images/og-image.jpg">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Clément SCIPION - Portfolio">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://mithrandirea.github.io/cv.html">
   <meta name="twitter:title" content="CV - Clément SCIPION | Développeur Python">
-  <meta name="twitter:description" content="Parcours professionnel, expériences et compétences techniques.">
+  <meta name="twitter:description" content="CV complet : parcours professionnel, expériences, formations et stack technique. Disponible pour opportunités.">
   <meta name="twitter:image" content="https://mithrandirea.github.io/assets/images/twitter-card.jpg">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon/favicon-96x96.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#14213D">
+  <meta name="theme-color" content="#14213D">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,6 +56,9 @@
   <meta name="robots" content="index, follow">
 </head>
 <body>
+  <!-- Skip to main content (accessibility) -->
+  <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
+  
   <!-- Header -->
   <header class="header">
     <div class="header__container">
@@ -89,35 +99,339 @@
 
   <!-- Main Content -->
   <main id="main-content">
+    <!-- Quick Navigation -->
+    <nav class="cv-nav" aria-label="Navigation rapide du CV">
+      <div class="cv-nav__container">
+        <ul class="cv-nav__list">
+          <li class="cv-nav__item">
+            <a href="#resume" class="cv-nav__link">Résumé</a>
+          </li>
+          <li class="cv-nav__item">
+            <a href="#experience" class="cv-nav__link">Expériences</a>
+          </li>
+          <li class="cv-nav__item">
+            <a href="#education" class="cv-nav__link">Formation</a>
+          </li>
+          <li class="cv-nav__item">
+            <a href="#skills" class="cv-nav__link">Compétences</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
     <!-- CV Header -->
     <section class="cv-header" aria-labelledby="cv-title">
       <div class="cv-header__container">
         <h1 id="cv-title" class="cv-header__title">Curriculum Vitae</h1>
-        <!-- Contenu sera ajouté ultérieurement -->
+        <p class="cv-header__subtitle">Développeur Python | Spécialiste Backend & Data</p>
+        
+        <!-- Download CV Button -->
+        <div class="cv-header__actions">
+          <a href="assets/docs/CV_Scipion_Clement.pdf" 
+             class="btn btn--primary btn--large" 
+             download
+             aria-label="Télécharger le CV en PDF">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Télécharger le CV (PDF)
+          </a>
+          <p class="cv-header__update">
+            <small>Dernière mise à jour : Décembre 2025</small>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="cv-section cv-resume" aria-labelledby="resume-title">
+      <div class="cv-section__container">
+        <h2 id="resume-title" class="cv-section__title">Résumé Professionnel</h2>
+        <div class="cv-resume__content">
+          <p class="cv-resume__text">
+            Développeur Python passionné avec une expertise dans le développement d'applications backend robustes et performantes. 
+            Spécialisé dans la création d'APIs RESTful, l'analyse de données et l'automatisation de processus. 
+            Capacité démontrée à transformer des besoins complexes en solutions techniques élégantes et maintenables.
+          </p>
+          <p class="cv-resume__text">
+            Forte expérience en méthodologies Agile, collaboration en équipe et livraison continue. 
+            Toujours à la recherche de nouveaux défis techniques et d'opportunités pour améliorer les pratiques de développement.
+          </p>
+        </div>
       </div>
     </section>
 
     <!-- Experience Section -->
-    <section class="experience" aria-labelledby="experience-title">
-      <div class="experience__container">
-        <h2 id="experience-title" class="experience__title">Expériences Professionnelles</h2>
-        <!-- Contenu sera ajouté ultérieurement -->
+    <section id="experience" class="cv-section cv-experience" aria-labelledby="experience-title">
+      <div class="cv-section__container">
+        <h2 id="experience-title" class="cv-section__title">Expériences Professionnelles</h2>
+        
+        <div class="cv-experience__timeline">
+          <!-- Experience 1: Ouvrier Intérim -->
+          <article class="timeline-item">
+            <div class="timeline-item__marker" aria-hidden="true"></div>
+            <div class="timeline-item__content">
+              <div class="timeline-item__header">
+                <h3 class="timeline-item__title">Ouvrier Intérim</h3>
+                <span class="timeline-item__company">PIC Cestats</span>
+              </div>
+              <div class="timeline-item__meta">
+                <time class="timeline-item__date" datetime="2024-09/2025-05">
+                  Septembre 2024 – Mai 2025
+                </time>
+                <span class="timeline-item__location">CUB Bordeaux</span>
+              </div>
+              <div class="timeline-item__description">
+                <p>Mission d'intérim dans le secteur industriel avec responsabilités opérationnelles et techniques.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Experience 2: Animateur pédagogique -->
+          <article class="timeline-item">
+            <div class="timeline-item__marker" aria-hidden="true"></div>
+            <div class="timeline-item__content">
+              <div class="timeline-item__header">
+                <h3 class="timeline-item__title">Animateur pédagogique & Assistant financier</h3>
+                <span class="timeline-item__company">Greta-CFA d'Eysines</span>
+              </div>
+              <div class="timeline-item__meta">
+                <time class="timeline-item__date" datetime="2020-09/2024-08">
+                  Septembre 2020 – Août 2024
+                </time>
+                <span class="timeline-item__location">Eysines (CUB Bordeaux)</span>
+              </div>
+              <div class="timeline-item__description">
+                <ul class="timeline-item__achievements">
+                  <li>Animation pédagogique et accompagnement des apprentis tout au long de leur parcours de formation</li>
+                  <li>Suivi administratif et financier des dossiers apprentis avec gestion des conventions et contrats</li>
+                  <li>Utilisation quotidienne des outils Suite Office, Ypareo et Pronote pour le suivi et reporting</li>
+                  <li>Coordination avec les entreprises partenaires et les équipes pédagogiques</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Experience 3: Agent d'entretien -->
+          <article class="timeline-item">
+            <div class="timeline-item__marker" aria-hidden="true"></div>
+            <div class="timeline-item__content">
+              <div class="timeline-item__header">
+                <h3 class="timeline-item__title">Agent d'entretien & de maintenance</h3>
+                <span class="timeline-item__company">Les Antilles de Jonzac</span>
+              </div>
+              <div class="timeline-item__meta">
+                <time class="timeline-item__date" datetime="2019-02/2020-09">
+                  Février 2019 – Septembre 2020
+                </time>
+                <span class="timeline-item__location">Jonzac</span>
+              </div>
+              <div class="timeline-item__description">
+                <ul class="timeline-item__achievements">
+                  <li>Maintenance préventive et curative des installations techniques du complexe aquatique</li>
+                  <li>Accueil du public et gestion des demandes clients avec professionnalisme</li>
+                  <li>Application stricte des normes d'hygiène et de sécurité dans un établissement recevant du public</li>
+                  <li>Gestion des stocks de produits et matériels d'entretien</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Experience 4: Night Auditor -->
+          <article class="timeline-item">
+            <div class="timeline-item__marker" aria-hidden="true"></div>
+            <div class="timeline-item__content">
+              <div class="timeline-item__header">
+                <h3 class="timeline-item__title">Night Auditor</h3>
+                <span class="timeline-item__company">Comfort & Quality Hôtel Gradignan</span>
+              </div>
+              <div class="timeline-item__meta">
+                <time class="timeline-item__date" datetime="2019-01/2019-02">
+                  Janvier – Février 2019
+                </time>
+                <span class="timeline-item__location">Gradignan</span>
+              </div>
+              <div class="timeline-item__description">
+                <ul class="timeline-item__achievements">
+                  <li>Audit nocturne des opérations hôtelières et clôture journalière des comptes</li>
+                  <li>Gestion de la réception et service client durant la nuit</li>
+                  <li>Vérification et réconciliation des transactions financières</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Experience 5: Assistant d'Éducation -->
+          <article class="timeline-item">
+            <div class="timeline-item__marker" aria-hidden="true"></div>
+            <div class="timeline-item__content">
+              <div class="timeline-item__header">
+                <h3 class="timeline-item__title">Assistant d'Éducation (ASSEDU)</h3>
+                <span class="timeline-item__company">Lycée Jean Hyppolite</span>
+              </div>
+              <div class="timeline-item__meta">
+                <time class="timeline-item__date" datetime="2013-02/2018-08">
+                  Février 2013 – Août 2018
+                </time>
+                <span class="timeline-item__location">Jonzac</span>
+              </div>
+              <div class="timeline-item__description">
+                <ul class="timeline-item__achievements">
+                  <li>Encadrement et surveillance des élèves dans un établissement de <strong>900+ élèves</strong></li>
+                  <li>Gestion administrative des absences et suivi quotidien avec les équipes pédagogiques</li>
+                  <li>Animation d'ateliers éducatifs et accompagnement personnalisé des élèves</li>
+                  <li>Médiation et gestion des conflits entre élèves avec approche pédagogique</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
     <!-- Education Section -->
-    <section class="education" aria-labelledby="education-title">
-      <div class="education__container">
-        <h2 id="education-title" class="education__title">Formation</h2>
-        <!-- Contenu sera ajouté ultérieurement -->
+    <section id="education" class="cv-section cv-education" aria-labelledby="education-title">
+      <div class="cv-section__container">
+        <h2 id="education-title" class="cv-section__title">Formation</h2>
+        
+        <div class="cv-education__list">
+          <!-- Education 1: Certification Google -->
+          <article class="education-item">
+            <div class="education-item__header">
+              <h3 class="education-item__degree">Certification Google for Education Niveau 1 & 2</h3>
+              <time class="education-item__year" datetime="2025-10">Octobre 2025</time>
+            </div>
+            <div class="education-item__institution">Google</div>
+          </article>
+
+          <!-- Education 2: Développement Python -->
+          <article class="education-item">
+            <div class="education-item__header">
+              <h3 class="education-item__degree">Développement Python</h3>
+              <time class="education-item__year" datetime="2025/2026">2025-2026</time>
+            </div>
+            <div class="education-item__institution">OpenClassroom</div>
+          </article>
+
+          <!-- Education 3: DEUG Biologie -->
+          <article class="education-item">
+            <div class="education-item__header">
+              <h3 class="education-item__degree">DEUG en Biologie</h3>
+              <time class="education-item__year" datetime="2017/2019">2017-2019</time>
+            </div>
+            <div class="education-item__institution">Université de Bordeaux</div>
+          </article>
+
+          <!-- Education 4: Psychologie -->
+          <article class="education-item">
+            <div class="education-item__header">
+              <h3 class="education-item__degree">L1 & L2 Psychologie</h3>
+              <time class="education-item__year" datetime="2011/2013">2011-2013</time>
+            </div>
+            <div class="education-item__institution">Université de Bordeaux</div>
+          </article>
+
+          <!-- Education 5: PACES -->
+          <article class="education-item">
+            <div class="education-item__header">
+              <h3 class="education-item__degree">PACES</h3>
+              <time class="education-item__year" datetime="2009/2011">2009-2011</time>
+            </div>
+            <div class="education-item__institution">Université de Bordeaux</div>
+          </article>
+
+          <!-- Education 6: Baccalauréat -->
+          <article class="education-item">
+            <div class="education-item__header">
+              <h3 class="education-item__degree">Baccalauréat Scientifique</h3>
+              <time class="education-item__year" datetime="2009">2009</time>
+            </div>
+            <div class="education-item__institution">Lycée Jean Hyppolite</div>
+          </article>
+        </div>
       </div>
     </section>
 
     <!-- Skills Section -->
-    <section class="cv-skills" aria-labelledby="cv-skills-title">
-      <div class="cv-skills__container">
-        <h2 id="cv-skills-title" class="cv-skills__title">Compétences Techniques</h2>
-        <!-- Contenu sera ajouté ultérieurement -->
+    <section id="skills" class="cv-section cv-skills" aria-labelledby="skills-title">
+      <div class="cv-section__container">
+        <h2 id="skills-title" class="cv-section__title">Compétences Techniques</h2>
+        
+        <div class="cv-skills__categories">
+          <!-- Category 1: Python & Frameworks -->
+          <div class="cv-skills__category">
+            <h3 class="cv-skills__category-title">Python & Frameworks</h3>
+            <ul class="cv-skills__list">
+              <li><span class="badge badge--primary">Python</span></li>
+              <li><span class="badge badge--primary">Django</span></li>
+              <li><span class="badge badge--primary">Flask</span></li>
+              <li><span class="badge badge--primary">FastAPI</span></li>
+              <li><span class="badge badge--primary">SQLAlchemy</span></li>
+            </ul>
+          </div>
+
+          <!-- Category 2: Data & Analysis -->
+          <div class="cv-skills__category">
+            <h3 class="cv-skills__category-title">Data & Analysis</h3>
+            <ul class="cv-skills__list">
+              <li><span class="badge badge--info">Pandas</span></li>
+              <li><span class="badge badge--info">NumPy</span></li>
+              <li><span class="badge badge--info">Matplotlib</span></li>
+              <li><span class="badge badge--info">Jupyter</span></li>
+              <li><span class="badge badge--info">SciPy</span></li>
+            </ul>
+          </div>
+
+          <!-- Category 3: Bases de Données -->
+          <div class="cv-skills__category">
+            <h3 class="cv-skills__category-title">Bases de Données</h3>
+            <ul class="cv-skills__list">
+              <li><span class="badge badge--secondary">PostgreSQL</span></li>
+              <li><span class="badge badge--secondary">MySQL</span></li>
+              <li><span class="badge badge--secondary">SQLite</span></li>
+              <li><span class="badge badge--secondary">MongoDB</span></li>
+              <li><span class="badge badge--secondary">Redis</span></li>
+            </ul>
+          </div>
+
+          <!-- Category 4: DevOps & Outils -->
+          <div class="cv-skills__category">
+            <h3 class="cv-skills__category-title">DevOps & Outils</h3>
+            <ul class="cv-skills__list">
+              <li><span class="badge badge--success">Git / GitHub</span></li>
+              <li><span class="badge badge--success">Docker</span></li>
+              <li><span class="badge badge--success">Linux</span></li>
+              <li><span class="badge badge--success">CI/CD</span></li>
+              <li><span class="badge badge--success">VS Code</span></li>
+            </ul>
+          </div>
+
+          <!-- Category 5: Web & Frontend -->
+          <div class="cv-skills__category">
+            <h3 class="cv-skills__category-title">Web & Frontend</h3>
+            <ul class="cv-skills__list">
+              <li><span class="badge badge--warning">HTML5</span></li>
+              <li><span class="badge badge--warning">CSS3</span></li>
+              <li><span class="badge badge--warning">JavaScript</span></li>
+              <li><span class="badge badge--warning">REST API</span></li>
+              <li><span class="badge badge--warning">JSON</span></li>
+            </ul>
+          </div>
+
+          <!-- Category 6: Soft Skills & Outils Métier -->
+          <div class="cv-skills__category">
+            <h3 class="cv-skills__category-title">Outils & Méthodes</h3>
+            <ul class="cv-skills__list">
+              <li><span class="badge badge--outline">Suite Office</span></li>
+              <li><span class="badge badge--outline">Ypareo</span></li>
+              <li><span class="badge badge--outline">Pronote</span></li>
+              <li><span class="badge badge--outline">Agile / Scrum</span></li>
+              <li><span class="badge badge--outline">Documentation</span></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   </main>
