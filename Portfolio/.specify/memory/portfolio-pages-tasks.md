@@ -32,15 +32,15 @@ Portfolio statique simple :
 - [x] T002 Créer `.gitignore` avec règles appropriées (node_modules, .DS_Store, fichiers temporaires)
 - [x] T003 [P] Créer `README.md` avec instructions setup, structure projet, et commandes de développement
 - [x] T004 [P] Installer/configurer Live Server (VS Code extension) pour développement local
-- [ ] T005 Rechercher et tester service formulaire contact (EmailJS vs Formspree) - documenter choix dans README
-- [ ] T006 [P] Tester conversion images WebP (outil/script) - documenter processus dans README
-- [ ] T007 Définir palette de couleurs (3-5 couleurs) et vérifier contrastes WCAG AA avec WebAIM Contrast Checker
-- [ ] T008 Sélectionner 2 familles de polices maximum (Google Fonts ou local)
-- [ ] T009 Définir système d'espacement (multiples de 8px: 8, 16, 24, 32, 48, 64, 96)
-- [ ] T010 Créer `assets/css/variables.css` avec custom properties CSS (couleurs, typographie, espacements)
-- [ ] T011 Documenter design system dans README (couleurs, typographie, espacements)
+- [x] T005 Rechercher et tester service formulaire contact (Web3Forms choisi) - documenté dans README
+- [x] T006 [P] Tester conversion images WebP (outil/script) - documenté dans README
+- [x] T007 Définir palette de couleurs (3-5 couleurs) et vérifier contrastes WCAG AA avec WebAIM Contrast Checker
+- [x] T008 Sélectionner 2 familles de polices maximum (Roboto + Playfair Display via Google Fonts)
+- [x] T009 Définir système d'espacement 8pt grid (8, 16, 24, 32, 48, 64, 96)
+- [x] T010 Créer `assets/css/variables.css` avec custom properties CSS (couleurs, typographie, espacements)
+- [x] T011 Documenter design system dans README (couleurs, typographie, espacements)
 
-**Checkpoint**: Structure projet créée, design system défini, solution formulaire choisie
+**Checkpoint**: ✅ Structure projet créée, design system défini, solution formulaire choisie
 
 ---
 
@@ -52,33 +52,33 @@ Portfolio statique simple :
 
 ### Structure HTML Sémantique (2-3h)
 
-- [ ] T012 Créer `index.html` avec doctype HTML5, head complet (meta viewport, charset, title, description)
-- [ ] T013 [P] Créer `cv.html` avec doctype HTML5, head complet
-- [ ] T014 [P] Créer `projets.html` avec doctype HTML5, head complet
-- [ ] T015 [P] Créer `contact.html` avec doctype HTML5, head complet
-- [ ] T016 Implémenter `<header>` commun avec logo/nom et navigation dans `index.html`
-- [ ] T017 [P] Copier `<header>` dans `cv.html`, `projets.html`, `contact.html`
-- [ ] T018 Créer navigation desktop : liste `<nav><ul>` avec liens Accueil, CV, Projets, Contact
-- [ ] T019 Ajouter bouton hamburger menu mobile (HTML) : `<button class="menu-toggle" aria-label="Menu">`
-- [ ] T020 Implémenter `<footer>` commun avec copyright et liens réseaux sociaux (LinkedIn, GitHub)
-- [ ] T021 [P] Copier `<footer>` dans toutes les pages HTML
-- [ ] T022 Créer structure `<main>` appropriée pour chaque page avec balises sémantiques (`<section>`, `<article>`)
-- [ ] T023 Valider tous les fichiers HTML avec W3C Validator - corriger erreurs
+- [x] T012 Créer `index.html` avec doctype HTML5, head complet (meta viewport, charset, title, description)
+- [x] T013 [P] Créer `cv.html` avec doctype HTML5, head complet
+- [x] T014 [P] Créer `projets.html` avec doctype HTML5, head complet
+- [x] T015 [P] Créer `contact.html` avec doctype HTML5, head complet
+- [x] T016 Implémenter `<header>` commun avec logo/nom et navigation dans `index.html`
+- [x] T017 [P] Copier `<header>` dans `cv.html`, `projets.html`, `contact.html`
+- [x] T018 Créer navigation desktop : liste `<nav><ul>` avec liens Accueil, CV, Projets, Contact
+- [x] T019 Ajouter bouton hamburger menu mobile (HTML) : `<button class="menu-toggle" aria-label="Menu">`
+- [x] T020 Implémenter `<footer>` commun avec copyright et liens réseaux sociaux (LinkedIn, GitHub)
+- [x] T021 [P] Copier `<footer>` dans toutes les pages HTML
+- [x] T022 Créer structure `<main>` appropriée pour chaque page avec balises sémantiques (`<section>`, `<article>`)
+- [x] T023 Valider tous les fichiers HTML avec W3C Validator - corriger erreurs
 
 ### Styles CSS Globaux (2-3h)
 
-- [ ] T024 Créer `assets/css/main.css` avec CSS reset (box-sizing, margin, padding)
-- [ ] T025 Importer variables.css dans main.css et appliquer typographie globale (font-family, line-height, font-size)
-- [ ] T026 [P] Créer `assets/css/components.css` pour composants réutilisables (vide pour l'instant)
-- [ ] T027 Styliser `<header>` et navigation desktop dans main.css (flexbox, espacement, couleurs)
-- [ ] T028 Créer styles navigation mobile : menu hamburger caché par défaut, overlay/slide-in
-- [ ] T029 Implémenter media queries responsive dans main.css (@media 768px, 1024px, 1440px)
-- [ ] T030 Styliser `<footer>` dans main.css (centré, padding, liens réseaux sociaux)
-- [ ] T031 Créer composants boutons dans components.css avec classes BEM (.btn, .btn--primary, .btn--secondary)
-- [ ] T032 Créer composant card dans components.css (.card, .card__image, .card__content, .card__title)
-- [ ] T033 Créer composant badge dans components.css (.badge, .badge--primary, variantes couleurs)
-- [ ] T034 Valider CSS avec CSS Validator (W3C) - corriger erreurs critiques
-- [ ] T035 Tester contrastes de couleurs avec WebAIM - ajuster si nécessaire
+- [x] T024 Créer `assets/css/main.css` avec CSS reset (box-sizing, margin, padding)
+- [x] T025 Importer variables.css dans main.css et appliquer typographie globale (font-family, line-height, font-size)
+- [x] T026 [P] Créer `assets/css/components.css` pour composants réutilisables (vide pour l'instant)
+- [x] T027 Styliser `<header>` et navigation desktop dans main.css (flexbox, espacement, couleurs)
+- [x] T028 Créer styles navigation mobile : menu hamburger caché par défaut, overlay/slide-in
+- [x] T029 Implémenter media queries responsive dans main.css (@media 768px, 1024px, 1440px)
+- [x] T030 Styliser `<footer>` dans main.css (centré, padding, liens réseaux sociaux)
+- [x] T031 Créer composants boutons dans components.css avec classes BEM (.btn, .btn--primary, .btn--secondary)
+- [x] T032 Créer composant card dans components.css (.card, .card__image, .card__content, .card__title)
+- [x] T033 Créer composant badge dans components.css (.badge, .badge--primary, variantes couleurs)
+- [x] T034 Valider CSS avec CSS Validator (W3C) - corriger erreurs critiques
+- [x] T035 Tester contrastes de couleurs avec WebAIM - ajuster si nécessaire
 
 ### Navigation Interactive (2h)
 

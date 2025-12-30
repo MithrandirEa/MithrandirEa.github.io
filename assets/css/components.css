@@ -1,0 +1,489 @@
+/**
+ * Components Stylesheet
+ * Portfolio Professionnel - Clément SCIPION
+ * 
+ * Contient : Composants réutilisables (boutons, cards, badges)
+ * Architecture BEM pour nomenclature des classes
+ */
+
+/* ========================================
+   BOUTONS (T031)
+   ======================================== */
+
+/**
+ * Bouton de base
+ * Utilisation : <button class="btn btn--primary">Texte</button>
+ */
+.btn {
+  /* Positionnement et dimensionnement */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  
+  /* Spacing */
+  padding: var(--spacing-3) var(--spacing-6);
+  
+  /* Typography */
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+  text-align: center;
+  
+  /* Apparence */
+  border: 2px solid transparent;
+  border-radius: var(--spacing-1);
+  background-color: transparent;
+  cursor: pointer;
+  
+  /* Transitions */
+  transition: 
+    background-color var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+  
+  /* Désactiver la sélection du texte */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* États hover et focus */
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--color-orange);
+  outline-offset: 2px;
+}
+
+/* État désactivé */
+.btn:disabled,
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn:disabled:hover,
+.btn[disabled]:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/**
+ * Bouton primaire
+ * Variante principale avec fond orange
+ */
+.btn--primary {
+  background-color: var(--color-orange);
+  color: var(--color-black);
+  border-color: var(--color-orange);
+}
+
+.btn--primary:hover {
+  background-color: #e09310; /* Orange plus foncé */
+  border-color: #e09310;
+}
+
+.btn--primary:active {
+  background-color: #c78209;
+}
+
+/**
+ * Bouton secondaire
+ * Variante outline avec bordure
+ */
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-prussian-blue);
+  border-color: var(--color-prussian-blue);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-prussian-blue);
+  color: var(--color-white);
+}
+
+.btn--secondary:active {
+  background-color: #0f1929; /* Prussian Blue plus foncé */
+}
+
+/**
+ * Variante outline inversée (pour fond sombre)
+ */
+.btn--outline-light {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.btn--outline-light:hover {
+  background-color: var(--color-white);
+  color: var(--color-prussian-blue);
+}
+
+/**
+ * Tailles de boutons
+ */
+.btn--small {
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: var(--font-size-sm);
+}
+
+.btn--large {
+  padding: var(--spacing-4) var(--spacing-8);
+  font-size: var(--font-size-lg);
+}
+
+/**
+ * Bouton pleine largeur
+ */
+.btn--full {
+  width: 100%;
+}
+
+/**
+ * Bouton icône uniquement
+ */
+.btn--icon {
+  padding: var(--spacing-2);
+  aspect-ratio: 1;
+}
+
+.btn--icon svg,
+.btn--icon img {
+  width: 24px;
+  height: 24px;
+}
+
+
+/* ========================================
+   CARDS (T032)
+   ======================================== */
+
+/**
+ * Card de base
+ * Utilisation : <article class="card">
+ *                 <img class="card__image" />
+ *                 <div class="card__content">
+ *                   <h3 class="card__title">Titre</h3>
+ *                   <p class="card__description">Description</p>
+ *                 </div>
+ *               </article>
+ */
+.card {
+  /* Structure */
+  display: flex;
+  flex-direction: column;
+  
+  /* Apparence */
+  background-color: var(--color-white);
+  border-radius: var(--spacing-2);
+  overflow: hidden;
+  
+  /* Élévation */
+  box-shadow: var(--shadow-sm);
+  
+  /* Transitions */
+  transition: 
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/**
+ * Image de la card
+ */
+.card__image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  background-color: var(--color-alabaster);
+  
+  /* Transition pour effet de zoom */
+  transition: transform var(--transition-base);
+}
+
+.card:hover .card__image {
+  transform: scale(1.05);
+}
+
+/**
+ * Conteneur du contenu textuel
+ */
+.card__content {
+  padding: var(--spacing-4);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+/**
+ * Titre de la card
+ */
+.card__title {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-prussian-blue);
+  margin: 0;
+  line-height: 1.3;
+}
+
+/**
+ * Description de la card
+ */
+.card__description {
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+/**
+ * Footer de la card (pour boutons, tags, etc.)
+ */
+.card__footer {
+  padding: 0 var(--spacing-4) var(--spacing-4);
+  display: flex;
+  gap: var(--spacing-2);
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/**
+ * Liste de tags/badges dans la card
+ */
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-2);
+}
+
+/**
+ * Variante horizontale (pour desktop)
+ */
+.card--horizontal {
+  flex-direction: row;
+}
+
+.card--horizontal .card__image {
+  width: 40%;
+  height: auto;
+  min-height: 300px;
+}
+
+.card--horizontal .card__content {
+  width: 60%;
+}
+
+/**
+ * Variante avec bordure
+ */
+.card--bordered {
+  border: 2px solid var(--color-alabaster);
+  box-shadow: none;
+}
+
+.card--bordered:hover {
+  border-color: var(--color-orange);
+  box-shadow: var(--shadow-md);
+}
+
+/**
+ * Variante interactive (cliquable)
+ */
+.card--interactive {
+  cursor: pointer;
+  position: relative;
+}
+
+.card--interactive::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: transparent;
+  transition: background-color var(--transition-base);
+}
+
+.card--interactive:hover::after {
+  background-color: rgba(252, 163, 17, 0.05);
+}
+
+/* Responsive : horizontal sur tablette+ */
+@media (min-width: 768px) {
+  .card--horizontal-md {
+    flex-direction: row;
+  }
+  
+  .card--horizontal-md .card__image {
+    width: 40%;
+    height: auto;
+    min-height: 280px;
+  }
+  
+  .card--horizontal-md .card__content {
+    width: 60%;
+  }
+}
+
+
+/* ========================================
+   BADGES (T033)
+   ======================================== */
+
+/**
+ * Badge de base
+ * Utilisation : <span class="badge badge--primary">Texte</span>
+ */
+.badge {
+  /* Display */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-1);
+  
+  /* Spacing */
+  padding: var(--spacing-1) var(--spacing-3);
+  
+  /* Typography */
+  font-family: var(--font-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  
+  /* Apparence */
+  border-radius: var(--spacing-5);
+  background-color: var(--color-alabaster);
+  color: var(--color-black);
+  
+  /* Désactiver la sélection */
+  user-select: none;
+  -webkit-user-select: none;
+  
+  /* Transition */
+  transition: 
+    background-color var(--transition-base),
+    color var(--transition-base),
+    transform var(--transition-base);
+}
+
+/**
+ * Badge primaire (orange)
+ */
+.badge--primary {
+  background-color: var(--color-orange);
+  color: var(--color-black);
+}
+
+/**
+ * Badge secondaire (Prussian Blue)
+ */
+.badge--secondary {
+  background-color: var(--color-prussian-blue);
+  color: var(--color-white);
+}
+
+/**
+ * Badge outline
+ */
+.badge--outline {
+  background-color: transparent;
+  border: 2px solid var(--color-prussian-blue);
+  color: var(--color-prussian-blue);
+}
+
+.badge--outline-light {
+  background-color: transparent;
+  border: 2px solid var(--color-white);
+  color: var(--color-white);
+}
+
+/**
+ * Badge succès
+ */
+.badge--success {
+  background-color: #10b981;
+  color: var(--color-white);
+}
+
+/**
+ * Badge info
+ */
+.badge--info {
+  background-color: #3b82f6;
+  color: var(--color-white);
+}
+
+/**
+ * Badge warning
+ */
+.badge--warning {
+  background-color: var(--color-orange);
+  color: var(--color-black);
+}
+
+/**
+ * Badge danger
+ */
+.badge--danger {
+  background-color: #ef4444;
+  color: var(--color-white);
+}
+
+/**
+ * Badge avec icône
+ */
+.badge--icon svg,
+.badge--icon img {
+  width: 16px;
+  height: 16px;
+}
+
+/**
+ * Badge interactif (cliquable)
+ */
+.badge--interactive {
+  cursor: pointer;
+}
+
+.badge--interactive:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
+
+/**
+ * Tailles alternatives
+ */
+.badge--small {
+  padding: calc(var(--spacing-1) / 2) var(--spacing-2);
+  font-size: var(--font-size-xs);
+}
+
+.badge--large {
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: var(--font-size-base);
+}

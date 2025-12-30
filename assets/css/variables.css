@@ -1,0 +1,199 @@
+/**
+ * Design System Variables
+ * Portfolio Professionnel - MithrandirEa
+ * 
+ * Contient : Couleurs, Typographie, Espacements
+ * Conforme WCAG 2.1 AA
+ */
+
+/* ========================================
+   PALETTE DE COULEURS
+   ======================================== */
+
+:root {
+  /* Couleurs Principales */
+  --color-black: #000000;
+  --color-prussian-blue: #14213D;
+  --color-orange: #FCA311;
+  --color-alabaster-grey: #E5E5E5;
+  --color-white: #FFFFFF;
+  
+  /* Couleurs Sémantiques */
+  --color-primary: var(--color-prussian-blue);
+  --color-secondary: var(--color-orange);
+  --color-accent: var(--color-orange);
+  
+  /* Couleurs de Texte */
+  --color-text-primary: var(--color-black);
+  --color-text-secondary: var(--color-prussian-blue);
+  --color-text-light: var(--color-alabaster-grey);
+  --color-text-inverse: var(--color-white);
+  
+  /* Couleurs de Fond */
+  --color-bg-primary: var(--color-white);
+  --color-bg-secondary: var(--color-alabaster-grey);
+  --color-bg-dark: var(--color-prussian-blue);
+  --color-bg-black: var(--color-black);
+  
+  /* Couleurs d'Interface */
+  --color-border: var(--color-alabaster-grey);
+  --color-hover: var(--color-orange);
+  --color-focus: var(--color-orange);
+  
+  /* ========================================
+     CONTRASTES WCAG AA (4.5:1 pour texte normal)
+     ======================================== */
+  
+  /* ✅ COMBINAISONS VALIDÉES WCAG AA :
+   * - Black (#000000) sur White (#FFFFFF) : 21:1 ✅
+   * - Black (#000000) sur Alabaster Grey (#E5E5E5) : 17.4:1 ✅
+   * - Prussian Blue (#14213D) sur White (#FFFFFF) : 14.8:1 ✅
+   * - Prussian Blue (#14213D) sur Alabaster Grey (#E5E5E5) : 12.3:1 ✅
+   * - Orange (#FCA311) sur Black (#000000) : 10.8:1 ✅
+   * - Orange (#FCA311) sur Prussian Blue (#14213D) : 7.3:1 ✅
+   * - White (#FFFFFF) sur Prussian Blue (#14213D) : 14.8:1 ✅
+   * - White (#FFFFFF) sur Black (#000000) : 21:1 ✅
+   * 
+   * ⚠️ COMBINAISONS À ÉVITER :
+   * - Orange (#FCA311) sur White (#FFFFFF) : 1.9:1 ❌
+   * - Orange (#FCA311) sur Alabaster Grey (#E5E5E5) : 1.6:1 ❌
+   * - Alabaster Grey (#E5E5E5) sur White (#FFFFFF) : 1.2:1 ❌
+   */
+}
+
+/* ========================================
+   TYPOGRAPHIE
+   ======================================== */
+
+:root {
+  /* Familles de polices */
+  /* Police principale : Roboto (sans-serif, professionnelle, excellente lisibilité) */
+  --font-primary: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  
+  /* Police secondaire : Playfair Display (serif, élégante pour titres) */
+  --font-secondary: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+  
+  /* Police monospace : pour code */
+  --font-mono: 'Courier New', Courier, monospace;
+  
+  /* Tailles de police (échelle modulaire 1.25 - Major Third) */
+  --font-size-xs: 0.75rem;      /* 12px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-md: 1.125rem;     /* 18px */
+  --font-size-lg: 1.25rem;      /* 20px */
+  --font-size-xl: 1.563rem;     /* 25px */
+  --font-size-2xl: 1.953rem;    /* 31px */
+  --font-size-3xl: 2.441rem;    /* 39px */
+  --font-size-4xl: 3.052rem;    /* 49px */
+  
+  /* Poids de police */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Hauteur de ligne */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  --line-height-loose: 2;
+  
+  /* Espacement des lettres */
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+}
+
+/* ========================================
+   SYSTÈME D'ESPACEMENT (multiples de 8px)
+   ======================================== */
+
+:root {
+  /* Espacements de base */
+  --spacing-0: 0;
+  --spacing-1: 0.5rem;   /* 8px */
+  --spacing-2: 1rem;     /* 16px */
+  --spacing-3: 1.5rem;   /* 24px */
+  --spacing-4: 2rem;     /* 32px */
+  --spacing-5: 2.5rem;   /* 40px */
+  --spacing-6: 3rem;     /* 48px */
+  --spacing-7: 4rem;     /* 64px */
+  --spacing-8: 6rem;     /* 96px */
+  --spacing-9: 8rem;     /* 128px */
+  --spacing-10: 12rem;   /* 192px */
+  
+  /* Espacements sémantiques */
+  --spacing-section: var(--spacing-8);
+  --spacing-container: var(--spacing-4);
+  --spacing-element: var(--spacing-2);
+  --spacing-tight: var(--spacing-1);
+}
+
+/* ========================================
+   BREAKPOINTS RESPONSIVE
+   ======================================== */
+
+:root {
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+}
+
+/* ========================================
+   BORDURES & OMBRES
+   ======================================== */
+
+:root {
+  /* Rayons de bordure */
+  --radius-sm: 0.25rem;   /* 4px */
+  --radius-md: 0.5rem;    /* 8px */
+  --radius-lg: 1rem;      /* 16px */
+  --radius-full: 9999px;
+  
+  /* Largeurs de bordure */
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 4px;
+  
+  /* Ombres */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   TRANSITIONS & ANIMATIONS
+   ======================================== */
+
+:root {
+  /* Durées */
+  --transition-fast: 150ms;
+  --transition-base: 250ms;
+  --transition-slow: 350ms;
+  
+  /* Courbes d'animation */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================================
+   Z-INDEX LAYERS
+   ======================================== */
+
+:root {
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-tooltip: 600;
+}
