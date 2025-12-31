@@ -22,11 +22,16 @@
 
 ## 🎯 À propos
 
-Portfolio professionnel moderne et performant, conçu selon les meilleures pratiques web :
-- **Accessibilité** : WCAG 2.1 niveau AA
-- **Performance** : Score Lighthouse ≥ 90
-- **SEO** : Optimisé pour les moteurs de recherche
-- **Responsive** : Compatible mobile, tablette, desktop
+Portfolio professionnel moderne et performant, développé en vanilla HTML, CSS et JavaScript sans framework. Conçu selon les meilleures pratiques web pour offrir une expérience utilisateur optimale et professionnelle.
+
+**Objectif** : Présenter mes compétences, expériences et projets de manière accessible, performante et professionnelle.
+
+**Caractéristiques** :
+- **Accessibilité** : WCAG 2.1 niveau AA - Navigation clavier complète, support lecteurs d'écran
+- **Performance** : Score Lighthouse ≥ 90 sur 4 catégories (Performance, Accessibility, Best Practices, SEO)
+- **SEO** : Métadonnées complètes, Open Graph, Twitter Cards, sitemap XML
+- **Responsive** : Mobile-first, compatible 320px → 1920px+ (mobile, tablette, desktop)
+- **Standards** : HTML5 sémantique validé W3C, CSS3 moderne, ES6+ vanilla JavaScript
 
 ## ✨ Fonctionnalités
 
@@ -51,23 +56,90 @@ Portfolio professionnel moderne et performant, conçu selon les meilleures prati
 
 ## 🛠️ Technologies
 
-### Core
+### Stack Technique
 
-- **HTML5** : Structure sémantique
-- **CSS3** : Styles modernes, variables CSS
-- **JavaScript ES6+** : Interactivité vanilla
+Ce portfolio est développé avec des **technologies web natives** (vanilla), sans framework ni dépendances externes pour garantir légèreté, performance et maintenabilité.
+
+#### Core Technologies
+
+- **HTML5** (Sémantique)
+  - Balises sémantiques : `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`
+  - Attributs ARIA pour accessibilité avancée
+  - Microdata structurées pour SEO
+  - Validation W3C stricte (0 erreurs)
+
+- **CSS3** (Moderne)
+  - Custom Properties (CSS Variables) pour design system
+  - CSS Grid & Flexbox pour layouts responsive
+  - Media Queries mobile-first
+  - Animations CSS avec `prefers-reduced-motion`
+  - Architecture modulaire : variables.css, main.css, components.css, page-specific.css
+  - Méthodologie BEM pour nommage des classes
+
+- **JavaScript ES6+** (Vanilla)
+  - Modules ES6 natifs
+  - Fetch API pour intégration GitHub API
+  - Intersection Observer pour animations scroll
+  - Event Delegation pour performance
+  - Pas de dépendances externes (0 npm packages en runtime)
+
+#### APIs & Intégrations
+
+- **GitHub REST API v3** : Récupération dynamique des repositories et projets
+- **Web3Forms API** : Service d'envoi d'emails pour formulaire de contact
+- **Google Fonts API** : Chargement optimisé des polices Roboto et Playfair Display
 
 ### Outils de Développement
 
-- **Live Server** (VS Code extension) : Développement local avec hot reload
-- **Lighthouse** : Audit performance et accessibilité
-- **axe DevTools** : Tests accessibilité automatisés
-- **W3C Validator** : Validation HTML/CSS
+- **Éditeur** : Visual Studio Code
+  - Extension : Live Server (hot reload)
+  - Extension : Prettier (formatage code)
+  - Extension : ESLint (qualité JavaScript)
 
-### Services Externes
+- **Audit & Tests**
+  - **Lighthouse** : Performance, accessibilité, SEO, best practices
+  - **axe DevTools** : Tests accessibilité automatisés WCAG 2.1
+  - **W3C Validator** : Validation HTML5 et CSS3
+  - **WebAIM Contrast Checker** : Vérification des contrastes de couleurs
 
-- **Web3Forms** : Service d'envoi emails pour formulaire contact (gratuit, sans backend)
-- **GitHub Pages** : Hébergement statique gratuit avec HTTPS
+- **Optimisation Images**
+  - **Squoosh** (web) : Conversion et compression WebP
+  - **cwebp** (CLI) : Conversion batch WebP
+
+- **Contrôle de Version**
+  - **Git** : Versioning du code source
+  - **GitHub** : Hébergement repository et collaboration
+
+### Hébergement & Déploiement
+
+- **GitHub Pages**
+  - Hébergement statique gratuit et illimité
+  - HTTPS automatique (Let's Encrypt)
+  - CDN global intégré (Fastly)
+  - Déploiement automatique sur push vers `main`
+  - Support custom domain (optionnel)
+
+### Services Externes (Runtime)
+
+- **Web3Forms** (Formulaire)
+  - API REST pour envoi emails sans backend
+  - 250 soumissions/mois gratuites
+  - Protection anti-spam (honeypot)
+  - Notifications instantanées
+
+- **Google Fonts** (Typographie)
+  - Chargement optimisé avec `preconnect`
+  - Polices : Roboto (sans-serif), Playfair Display (serif)
+  - Fallback sur polices système si indisponible
+
+### Pourquoi Vanilla (Sans Framework) ?
+
+✅ **Performance** : 0 KB de JavaScript framework (React ~40KB, Vue ~33KB gzipped)  
+✅ **Légèreté** : Site total < 500 KB (HTML+CSS+JS+Images optimisées)  
+✅ **Maintenabilité** : Pas de dépendances à maintenir, pas de breaking changes  
+✅ **Compatibilité** : Support navigateurs > 95% sans polyfills  
+✅ **Apprentissage** : Maîtrise des fondamentaux web natifs  
+✅ **SEO** : Contenu indexable immédiatement (pas de JavaScript pour le contenu critique)
 
 ## 📁 Structure du Projet
 
@@ -655,42 +727,525 @@ Avant chaque déploiement, vérifier :
    ```
 3. Attendre propagation DNS (24-48h)
 
-## 🔧 Maintenance
+## 🔧 Maintenance & Mise à Jour du Contenu
 
-### Mettre à Jour le Contenu
+### Guide de Mise à Jour
 
-**Modifier le CV :**
-1. Éditer `cv.html` (sections expériences, formation, compétences)
-2. Mettre à jour le PDF dans `assets/docs/cv.pdf`
-3. Changer la date de mise à jour dans `cv.html`
-4. Commit et push
+Ce guide vous aide à mettre à jour facilement le contenu du portfolio sans connaissances techniques avancées.
 
-**Ajouter un Projet :**
-1. Ajouter les données dans `assets/js/projects-data.js` (si JSON)
-2. Ou ajouter une card projet dans `projets.html`
-3. Ajouter images du projet dans `assets/images/projects/`
-4. Optimiser images en WebP
+#### 📄 Modifier le CV
+
+**Étape 1 : Éditer le fichier HTML**
+
+1. Ouvrir `cv.html` dans un éditeur de texte (VS Code recommandé)
+
+2. **Ajouter une expérience professionnelle** :
+   ```html
+   <!-- Localiser la section <section id="experience"> -->
+   <!-- Copier-coller ce template et remplacer les valeurs -->
+   <article class="experience-item">
+     <div class="experience-header">
+       <h3 class="experience-title">Titre du Poste</h3>
+       <p class="experience-company">Nom de l'Entreprise</p>
+       <p class="experience-date">Mois Année - Mois Année</p>
+     </div>
+     <ul class="experience-achievements">
+       <li>Réalisation ou responsabilité 1</li>
+       <li>Réalisation ou responsabilité 2</li>
+       <li>Réalisation ou responsabilité 3</li>
+     </ul>
+   </article>
+   ```
+
+3. **Ajouter une compétence** :
+   ```html
+   <!-- Localiser la section <section id="skills"> -->
+   <!-- Dans la catégorie appropriée (Frontend, Backend, Outils) -->
+   <span class="badge badge--primary">Nouvelle Compétence</span>
+   ```
+
+4. **Ajouter une formation** :
+   ```html
+   <!-- Localiser la section <section id="education"> -->
+   <article class="education-item">
+     <h3 class="education-degree">Diplôme Obtenu</h3>
+     <p class="education-school">Nom de l'Établissement</p>
+     <p class="education-date">Année d'obtention</p>
+   </article>
+   ```
+
+**Étape 2 : Mettre à jour le PDF**
+
+1. Créer/exporter votre CV au format PDF (max 2 MB)
+2. Renommer le fichier : `cv-votre-nom.pdf`
+3. Remplacer le fichier dans `assets/docs/cv-votre-nom.pdf`
+4. Vérifier le lien dans `cv.html` :
+   ```html
+   <a href="assets/docs/cv-votre-nom.pdf" download class="btn btn--primary">
+     📥 Télécharger CV PDF
+   </a>
+   ```
+
+**Étape 3 : Mettre à jour la date**
+
+1. Dans `cv.html`, localiser :
+   ```html
+   <p class="cv-update-date">Dernière mise à jour : [Date]</p>
+   ```
+2. Remplacer `[Date]` par la date actuelle (ex: "Décembre 2025")
+
+**Étape 4 : Tester et déployer**
+
+```bash
+# Tester localement avec Live Server
+# Ouvrir cv.html → Clic droit → Open with Live Server
+
+# Si tout est correct, committer et pousser
+git add cv.html assets/docs/cv-votre-nom.pdf
+git commit -m "docs: update CV - ajout expérience [Entreprise]"
+git push origin main
+
+# Le site se met à jour automatiquement en 1-2 minutes
+```
+
+---
+
+#### 💼 Ajouter ou Modifier un Projet
+
+**Option 1 : Projet hébergé sur GitHub (Automatique)**
+
+Les projets GitHub apparaissent automatiquement via l'API. Pour qu'un projet s'affiche :
+
+1. **Rendre le repository public** sur GitHub
+2. **Ajouter une description** claire au repository (Settings → About)
+3. **Ajouter des topics** (technologies utilisées) : `javascript`, `react`, `python`, etc.
+4. **Optionnel** : Ajouter un lien de démo dans "Website" (Settings → About)
+5. Le projet apparaîtra automatiquement dans la page Projets (rafraîchir la page)
+
+**Configuration du filtre** (si besoin) :
+
+Pour exclure certains repositories de l'affichage :
+```javascript
+// Éditer assets/js/projects.js
+// Localiser la fonction filterRepos()
+function filterRepos(repos) {
+  return repos.filter(repo => 
+    !repo.fork &&                    // Exclure les forks
+    !repo.archived &&                // Exclure les archivés
+    !repo.name.includes('test') &&   // Exclure les repos de test
+    repo.name !== 'MithrandirEa.github.io' // Exclure le portfolio lui-même
+  );
+}
+```
+
+**Option 2 : Projet externe (Manuel)**
+
+Pour ajouter un projet non-GitHub :
+
+1. Ouvrir `assets/js/projects.js`
+2. Ajouter dans le tableau `manualProjects` :
+   ```javascript
+   const manualProjects = [
+     {
+       name: "Nom du Projet",
+       description: "Description courte du projet",
+       html_url: "https://github.com/username/repo", // Lien GitHub ou autre
+       homepage: "https://demo-project.com",         // Lien démo (optionnel)
+       language: "JavaScript",                       // Langage principal
+       topics: ["react", "nodejs", "mongodb"],     // Technologies
+       stargazers_count: 0,                          // Nombre d'étoiles
+       created_at: "2025-01-01T00:00:00Z"
+     }
+   ];
+   ```
+3. Ajouter une image du projet dans `assets/images/projects/nom-projet.webp`
+4. Tester localement
 5. Commit et push
 
-**Modifier les Couleurs/Design :**
-1. Éditer les variables CSS dans `assets/css/main.css`
-2. Vérifier contrastes WCAG AA
-3. Tester sur toutes les pages
-4. Commit et push
+**Optimiser les images de projet** :
+```bash
+# Placer l'image originale dans assets/images/projects/
+# Convertir en WebP avec Squoosh ou cwebp
+cwebp assets/images/projects/projet.jpg -q 85 -o assets/images/projects/projet.webp
+
+# Garder le JPEG comme fallback
+# L'utiliser dans le code avec <picture>
+```
+
+---
+
+#### 🎨 Modifier les Couleurs ou le Design
+
+**Changer les couleurs du site** :
+
+1. Ouvrir `assets/css/variables.css`
+2. Modifier les valeurs des variables CSS :
+   ```css
+   :root {
+     /* Modifier ces valeurs avec vos couleurs */
+     --color-primary: #14213D;    /* Couleur principale */
+     --color-accent: #FCA311;     /* Couleur d'accent (CTA) */
+     --color-text: #000000;       /* Couleur du texte */
+     --color-background: #FFFFFF; /* Couleur de fond */
+   }
+   ```
+3. **IMPORTANT** : Vérifier les contrastes WCAG AA avec [WebAIM](https://webaim.org/resources/contrastchecker/)
+   - Texte normal : ratio ≥ 4.5:1
+   - Texte large (18px+) : ratio ≥ 3:1
+4. Tester sur toutes les pages (index, cv, projets, contact)
+5. Commit et push
+
+**Changer les polices** :
+
+1. Choisir de nouvelles polices sur [Google Fonts](https://fonts.google.com/)
+2. Copier le code d'import dans `<head>` de toutes les pages HTML :
+   ```html
+   <link href="https://fonts.googleapis.com/css2?family=Nouvelle-Police:wght@400;700&display=swap" rel="stylesheet">
+   ```
+3. Mettre à jour `assets/css/variables.css` :
+   ```css
+   --font-primary: 'Nouvelle-Police', sans-serif;
+   ```
+4. Tester lisibilité sur toutes les pages
+5. Commit et push
+
+---
+
+#### 📝 Modifier les Textes
+
+**Page d'accueil** (`index.html`) :
+- **Nom et titre** : Balise `<h1>` dans la section `.hero`
+- **Accroche** : Paragraphe `<p>` après le `<h1>`
+- **Compétences** : Sections `.skill-card` avec titre et description
+
+**Page CV** (`cv.html`) :
+- **Résumé professionnel** : Section `#resume`
+- **Expériences** : Articles `.experience-item`
+- **Formation** : Articles `.education-item`
+- **Compétences** : Badges `.badge` dans section `#skills`
+
+**Page Contact** (`contact.html`) :
+- **Message d'introduction** : Paragraphe avant le formulaire
+- **Liens réseaux sociaux** : Modifier les URLs dans les liens `<a>`
+
+**Astuce** : Utiliser la recherche (Ctrl+F) pour localiser rapidement le texte à modifier.
+
+---
+
+#### 🔄 Workflow de Mise à Jour Standard
+
+```bash
+# 1. Créer une branche pour vos modifications
+git checkout -b update/cv-janvier-2026
+
+# 2. Faire vos modifications
+# Éditer les fichiers HTML, ajouter images, etc.
+
+# 3. Tester localement
+# Ouvrir avec Live Server, vérifier toutes les pages
+
+# 4. Valider HTML (optionnel mais recommandé)
+# Utiliser https://validator.w3.org/
+
+# 5. Committer les changements
+git add .
+git commit -m "docs: update CV - nouvelle expérience chez [Entreprise]"
+
+# 6. Pousser vers GitHub
+git push origin update/cv-janvier-2026
+
+# 7. Créer une Pull Request sur GitHub (optionnel pour validation)
+# Ou merger directement :
+git checkout main
+git merge update/cv-janvier-2026
+git push origin main
+
+# 8. Vérifier le déploiement
+# Attendre 1-2 minutes, puis visiter https://[username].github.io
+```
+
+## 💻 Développement
+
+### Environnement de Développement
+
+**Configuration Recommandée**
+
+1. **Visual Studio Code** avec extensions :
+   ```bash
+   # Extensions essentielles
+   code --install-extension ritwickdey.liveserver      # Live Server
+   code --install-extension esbenp.prettier-vscode     # Prettier
+   code --install-extension dbaeumer.vscode-eslint     # ESLint
+   code --install-extension ecmel.vscode-html-css      # HTML CSS Support
+   ```
+
+2. **Navigateurs de développement** :
+   - Chrome/Edge (recommandé) : DevTools complets, Lighthouse intégré
+   - Firefox : Excellents outils accessibilité, Grid Inspector
+   - Safari (Mac) : Test compatibilité WebKit
+
+3. **Outils externes** :
+   - [axe DevTools](https://www.deque.com/axe/devtools/) : Extension Chrome/Firefox pour accessibilité
+   - [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) : Vérification contrastes
+   - [Squoosh](https://squoosh.app/) : Optimisation images WebP
+
+### Commandes de Développement
+
+```bash
+# Cloner le projet
+git clone https://github.com/MithrandirEa/MithrandirEa.github.io.git
+cd MithrandirEa.github.io
+
+# Ouvrir dans VS Code
+code .
+
+# Lancer le serveur de développement
+# Méthode 1 : Live Server dans VS Code
+# Clic droit sur index.html → "Open with Live Server"
+# Ou raccourci : Alt+L Alt+O
+
+# Méthode 2 : Python HTTP Server (si Live Server non disponible)
+python -m http.server 8000
+# Ouvrir http://localhost:8000 dans le navigateur
+
+# Méthode 3 : Node.js http-server
+npx http-server -p 8000
+```
+
+### Tests Locaux
+
+**Tests de Performance**
+```bash
+# Lighthouse via Chrome DevTools
+# 1. Ouvrir la page dans Chrome
+# 2. F12 → Onglet "Lighthouse"
+# 3. Cocher les 4 catégories
+# 4. Cliquer "Analyze page load"
+# Objectif : Score ≥ 90 sur les 4 catégories
+
+# Lighthouse via CLI (si installé globalement)
+npm install -g lighthouse
+lighthouse http://localhost:5500 --view --output html
+
+# Test connexion lente (throttling)
+# DevTools → Network → Throttling → "Slow 3G"
+```
+
+**Tests d'Accessibilité**
+```bash
+# axe DevTools
+# 1. Installer extension Chrome/Firefox
+# 2. F12 → Onglet "axe DevTools"
+# 3. Cliquer "Scan ALL of my page"
+# Objectif : 0 violations critiques
+
+# Tests manuels obligatoires
+# 1. Navigation complète au clavier
+#    - Tab/Shift+Tab : parcourir tous les éléments interactifs
+#    - Enter : activer liens et boutons
+#    - Escape : fermer modales et menus
+#    - Vérifier focus visible sur tous les éléments
+
+# 2. Lecteur d'écran (recommandé)
+#    - Windows : NVDA (gratuit) https://www.nvaccess.org/
+#    - Mac : VoiceOver (intégré) Cmd+F5
+#    - Tester navigation sur chaque page
+
+# 3. Vérification contrastes
+#    - Utiliser WebAIM Contrast Checker
+#    - Ou DevTools → Inspect → Accessibility → Contrast ratio
+```
+
+**Validation HTML/CSS**
+```bash
+# Validation HTML (W3C)
+# Méthode 1 : En ligne
+# https://validator.w3.org/#validate_by_upload
+# Upload chaque fichier .html
+
+# Méthode 2 : Extension VS Code
+code --install-extension HTMLHint.vscode-htmlhint
+# Les erreurs apparaissent dans l'éditeur
+
+# Validation CSS (W3C)
+# https://jigsaw.w3.org/css-validator/#validate_by_upload
+# Upload chaque fichier .css
+
+# Objectif : 0 erreurs sur tous les fichiers
+```
+
+**Tests Cross-Browser**
+```bash
+# Tests requis sur :
+# ✅ Chrome (dernière version) - DevTools complets
+# ✅ Firefox (dernière version) - Grid Inspector, accessibilité
+# ✅ Safari (dernière version) - WebKit, Mac/iOS
+# ✅ Edge (dernière version) - Chromium, Windows
+
+# Tester sur chaque navigateur :
+# - Affichage correct de toutes les pages
+# - Navigation fonctionnelle (menu, liens)
+# - Formulaire de contact (validation, envoi)
+# - Modale projets (ouverture, fermeture)
+# - Animations et transitions
+# - Console JavaScript (0 erreurs)
+```
+
+**Tests Responsive**
+```bash
+# DevTools Responsive Mode
+# Chrome : F12 → Toggle device toolbar (Ctrl+Shift+M)
+# Tester sur :
+# 📱 Mobile Portrait : 320px, 375px, 414px
+# 📱 Mobile Landscape : 640px, 768px
+# 📱 Tablet : 768px, 1024px
+# 💻 Desktop : 1280px, 1440px, 1920px
+
+# Vérifier sur chaque breakpoint :
+# - Layout correct (pas de débordement horizontal)
+# - Texte lisible (taille appropriée)
+# - Images adaptées (responsive)
+# - Navigation accessible (menu hamburger mobile)
+# - Espacements cohérents
+# - Touch targets ≥ 44x44px (mobile)
+```
+
+### Outils de Développement
+
+**Chrome DevTools (F12)**
+```bash
+# Elements : Inspecter HTML/CSS
+# - Edit en direct
+# - Visualiser box model
+# - Forcer états hover/focus/active
+
+# Console : Debug JavaScript
+# - Voir erreurs et warnings
+# - Tester code JS en direct
+# - Monitorer API calls
+
+# Network : Analyser ressources
+# - Taille des fichiers
+# - Temps de chargement
+# - Requêtes API
+# - Throttling (simuler connexion lente)
+
+# Lighthouse : Audit complet
+# - Performance
+# - Accessibilité
+# - Best Practices
+# - SEO
+
+# Coverage : Code non utilisé
+# - Identifier CSS/JS inutile
+# - Optimiser taille bundle
+```
+
+**Live Server (VS Code)**
+```bash
+# Fonctionnalités :
+# ✅ Hot reload automatique à chaque sauvegarde
+# ✅ URL locale : http://localhost:5500
+# ✅ Synchronisation navigateur
+# ✅ Support CORS pour API calls
+
+# Configuration (settings.json) :
+{
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.root": "/",
+  "liveServer.settings.CustomBrowser": "chrome",
+  "liveServer.settings.NoBrowser": false
+}
+
+# Raccourcis :
+# Alt+L Alt+O : Ouvrir avec Live Server
+# Alt+L Alt+C : Fermer Live Server
+```
+
+### Workflow de Développement
+
+**Développement d'une nouvelle fonctionnalité**
+
+```bash
+# 1. Créer une branche feature
+git checkout -b feature/nouvelle-section
+
+# 2. Développer en mode itératif
+# - Éditer HTML/CSS/JS
+# - Live Server reload automatiquement
+# - Tester dans le navigateur
+# - Itérer jusqu'à satisfaction
+
+# 3. Tests locaux
+# - Lighthouse (performance)
+# - axe DevTools (accessibilité)
+# - W3C Validator (HTML/CSS)
+# - Tests responsive (DevTools)
+# - Tests cross-browser
+
+# 4. Committer
+git add .
+git commit -m "feat: add nouvelle section to homepage"
+
+# 5. Merger dans main
+git checkout main
+git merge feature/nouvelle-section
+
+# 6. Pousser et déployer
+git push origin main
+# GitHub Pages déploie automatiquement
+```
+
+**Debug d'un bug**
+
+```bash
+# 1. Reproduire le bug localement
+# - Identifier les étapes pour reproduire
+# - Noter navigateur, device, conditions
+
+# 2. Utiliser DevTools
+# - Console : erreurs JavaScript
+# - Elements : inspecter HTML/CSS
+# - Network : vérifier requêtes API
+# - Debugger : breakpoints dans JS
+
+# 3. Créer une branche fix
+git checkout -b fix/correction-bug-menu
+
+# 4. Corriger le bug
+# - Éditer le code
+# - Tester la correction
+# - S'assurer que ça ne casse rien d'autre
+
+# 5. Tester sur tous les navigateurs
+# - Chrome, Firefox, Safari, Edge
+# - Mobile et desktop
+
+# 6. Committer et déployer
+git add .
+git commit -m "fix: correct menu closing issue on mobile"
+git push origin fix/correction-bug-menu
+git checkout main
+git merge fix/correction-bug-menu
+git push origin main
+```
 
 ### Optimisation Continue
 
 **Mensuel :**
-- Audit Lighthouse : vérifier scores
-- Tests accessibilité : axe DevTools
-- Vérifier liens externes (projets)
-- Tester formulaire contact
+- Audit Lighthouse : vérifier scores ≥ 90
+- Tests accessibilité : axe DevTools, 0 violations
+- Vérifier liens externes (projets GitHub)
+- Tester formulaire contact (envoi réel)
+- Vérifier console : 0 erreurs JavaScript
 
 **Trimestriel :**
 - Mettre à jour contenu (CV, projets)
-- Audit SEO : Search Console
+- Audit SEO : Google Search Console
 - Analyser analytics (si configuré)
-- Optimiser images si nouvelles
+- Optimiser nouvelles images en WebP
+- Tester Core Web Vitals en production
+- Mettre à jour dépendances (Google Fonts, API versions)
 
 ## 📜 Constitution
 

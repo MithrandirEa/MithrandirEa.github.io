@@ -438,11 +438,11 @@ Portfolio statique simple :
 
 ### Documentation Finale (1-2h)
 
-- [ ] T241 Finaliser `README.md` : description projet, technologies, structure, instructions setup local
-- [ ] T242 Documenter configuration formulaire dans README : service utilisé, clés API (masquées), setup
-- [ ] T243 Créer guide mise à jour contenu dans README : comment modifier CV, ajouter projet, changer textes
-- [ ] T244 Ajouter section "Développement" dans README : commandes, outils, tests locaux
-- [ ] T245 Créer `CHANGELOG.md` initial : version 1.0.0 avec liste features implémentées
+- [x] T241 Finaliser `README.md` : description projet, technologies, structure, instructions setup local
+- [x] T242 Documenter configuration formulaire dans README : service utilisé, clés API (masquées), setup
+- [x] T243 Créer guide mise à jour contenu dans README : comment modifier CV, ajouter projet, changer textes
+- [x] T244 Ajouter section "Développement" dans README : commandes, outils, tests locaux
+- [x] T245 Créer `CHANGELOG.md` initial : version 1.0.0 avec liste features implémentées
 - [ ] T246 Optionnellement documenter roadmap futures améliorations (P4) : multilingue, blog, dark mode
 
 ### Post-Launch Monitoring (optionnel)
