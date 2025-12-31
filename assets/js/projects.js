@@ -780,6 +780,8 @@
    */
   function openModal(repo, triggerElement = null) {
     console.log('[ProjectsAPI] Opening modal for:', repo.name);
+    console.log('[ProjectsAPI] Repo data:', repo);
+    console.log('[ProjectsAPI] html_url:', repo.html_url);
     
     // Stocker l'élément déclencheur pour restaurer le focus à la fermeture
     modalTriggerElement = triggerElement;
@@ -821,7 +823,9 @@
     
     // Liens
     const githubLink = document.getElementById('modalGithubLink');
-    githubLink.href = repo.html_url || '#';
+    const githubUrl = repo.html_url || `https://github.com/${CONFIG.username}/${repo.name}`;
+    console.log('[ProjectsAPI] Setting GitHub link to:', githubUrl);
+    githubLink.href = githubUrl;
     
     const demoLink = document.getElementById('modalDemoLink');
     if (repo.homepage) {
@@ -833,17 +837,19 @@
     
     // Charger le README si disponible (optionnel)
     const readmeSection = document.getElementById('modalReadmeSection');
-    const readmeContent = document.getElementById('modalReadmeContent');
-    fetchReadme(repo).then(readme => {
-      if (readme) {
-        // Limiter à 1000 caractères pour ne pas surcharger
-        const truncated = readme.length > 1000 ? readme.substring(0, 1000) + '...' : readme;
-        readmeContent.innerHTML = parseMarkdown(truncated);
-        readmeSection.style.display = 'block';
-      } else {
-        readmeSection.style.display = 'none';
-      }
-    });
+    const readmeContent = document.getElementById('modalReadme');
+    if (readmeContent) {
+      fetchReadme(repo).then(readme => {
+        if (readme) {
+          // Limiter à 1000 caractères pour ne pas surcharger
+          const truncated = readme.length > 1000 ? readme.substring(0, 1000) + '...' : readme;
+          readmeContent.innerHTML = parseMarkdown(truncated);
+          readmeSection.style.display = 'block';
+        } else {
+          readmeSection.style.display = 'none';
+        }
+      });
+    }
     
     // Ouvrir la modale
     modal.classList.add('modal--open');
@@ -916,11 +922,14 @@
       }
     });
 
-    // Empêcher la fermeture si on clique dans le container
+    // Empêcher la fermeture si on clique dans le container (mais pas sur les liens)
     const container = modal.querySelector('.modal__container');
     if (container) {
       container.addEventListener('click', (e) => {
-        e.stopPropagation();
+        // Permettre la navigation sur les liens
+        if (!e.target.closest('a')) {
+          e.stopPropagation();
+        }
       });
     }
   }
