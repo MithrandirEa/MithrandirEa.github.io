@@ -69,3 +69,5 @@ ehthumbs_vista.db
 # Ignore development server files
 .parcel-cache/
 .cache/
+
+Portfolio/
