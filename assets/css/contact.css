@@ -57,7 +57,7 @@
 
 .contact-form {
   padding: var(--spacing-10) var(--spacing-4);
-  padding-bottom: var(--spacing-12);
+  padding-bottom: var(--spacing-16);
   background-color: var(--color-white);
 }
 
@@ -272,6 +272,7 @@
   display: flex;
   justify-content: center;
   margin-top: var(--spacing-4);
+  margin-bottom: var(--spacing-8);
 }
 
 /* Honeypot (Anti-Spam Protection) */
@@ -322,13 +323,15 @@
    ======================================== */
 
 .contact-info {
-  padding: var(--spacing-10) var(--spacing-4);
+  padding: var(--spacing-12) var(--spacing-4) var(--spacing-10);
   background-color: var(--color-bg-secondary);
 }
 
 .contact-info__container {
   max-width: 800px;
   margin: 0 auto;
+  padding-top: var(--spacing-6);
+  padding-bottom: var(--spacing-6);
 }
 
 .contact-info__title {
