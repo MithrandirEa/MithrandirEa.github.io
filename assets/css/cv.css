@@ -633,10 +633,8 @@
    SMOOTH SCROLL BEHAVIOR
    ======================================== */
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 150px; /* Header + nav height */
-}
+/* Note: Le scroll offset est géré dynamiquement par JavaScript (cv.js)
+   pour s'adapter automatiquement aux changements de hauteur des éléments sticky */
 
 /* Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
