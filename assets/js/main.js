@@ -264,25 +264,29 @@ function initScrollBehavior() {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
       
-      // Ignorer si c'est juste "#"
-      if (targetId === '#') return;
+      // Ignorer si c'est juste "#" ou si le lien a target="_blank" (lien externe)
+      if (targetId === '#' || this.hasAttribute('target')) return;
+      
+      // Vérifier que c'est bien un ID valide (commence par #)
+      if (!targetId || !targetId.startsWith('#')) return;
+      
+      // Ne faire preventDefault que si la cible existe vraiment
+      const target = document.querySelector(targetId);
+      if (!target) return;
       
       e.preventDefault();
-      const target = document.querySelector(targetId);
       
-      if (target) {
-        const headerHeight = header?.offsetHeight || 0;
-        const targetPosition = target.offsetTop - headerHeight - 20;
-        
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-        
-        // Focus sur l'élément cible pour l'accessibilité
-        target.setAttribute('tabindex', '-1');
-        target.focus();
-      }
+      const headerHeight = header?.offsetHeight || 0;
+      const targetPosition = target.offsetTop - headerHeight - 20;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+      
+      // Focus sur l'élément cible pour l'accessibilité
+      target.setAttribute('tabindex', '-1');
+      target.focus();
     });
   });
 }

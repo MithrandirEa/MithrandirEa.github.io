@@ -909,11 +909,14 @@
       closeButton.addEventListener('click', closeModal);
     }
 
-    // Clic sur l'overlay
-    const overlay = modal.querySelector('.modal__overlay');
-    if (overlay) {
-      overlay.addEventListener('click', closeModal);
-    }
+    // Clic sur l'overlay pour fermer (mais pas sur le container lui-même)
+    modal.addEventListener('click', (e) => {
+      // Fermer seulement si on clique directement sur la modale (l'overlay)
+      // Pas si on clique sur le container ou ses enfants
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
 
     // Touche Escape
     document.addEventListener('keydown', (e) => {
@@ -921,17 +924,6 @@
         closeModal();
       }
     });
-
-    // Empêcher la fermeture si on clique dans le container (mais pas sur les liens)
-    const container = modal.querySelector('.modal__container');
-    if (container) {
-      container.addEventListener('click', (e) => {
-        // Permettre la navigation sur les liens
-        if (!e.target.closest('a')) {
-          e.stopPropagation();
-        }
-      });
-    }
   }
 
   /**
@@ -958,7 +950,6 @@
           return;
         }
         
-        e.preventDefault();
         openModal(repo, card);
       });
 
