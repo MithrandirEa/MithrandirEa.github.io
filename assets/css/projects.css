@@ -382,7 +382,13 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: var(--color-orange);
+  /* La couleur est définie en ligne via une variable CSS */
+}
+
+.project-card__languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
 }
 
 .project-card__stars {

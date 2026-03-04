@@ -197,3 +197,39 @@
   --z-modal: 500;
   --z-tooltip: 600;
 }
+
+/* ========================================
+   LANGUAGE COLORS
+   ======================================== */
+
+:root {
+  --lang-html: #e44d26;
+  --lang-css: #563d7c;
+  --lang-javascript: #f1e05a;
+  --lang-python: #3572A5;
+  --lang-jupyter-notebook: #DA5B0B;
+  --lang-shell: #89e051;
+  --lang-dockerfile: #384d54;
+  --lang-vue: #41b883;
+  --lang-typescript: #3178c6;
+  --lang-go: #00ADD8;
+  --lang-csharp: #178600;
+  --lang-php: #4F5D95;
+  --lang-ruby: #701516;
+  --lang-java: #b07219;
+  --lang-swift: #ffac45;
+  --lang-kotlin: #F18E33;
+  --lang-rust: #dea584;
+  --lang-c: #555555;
+  --lang-cpp: #f34b7d;
+  --lang-c-plus-plus: #f34b7d; /* Alias for C++ */
+  --lang-objective-c: #438eff;
+  --lang-scala: #c22d40;
+  --lang-r: #198ce7;
+  --lang-powershell: #012456;
+  --lang-sql: #e38c00;
+  --lang-viml: #199f4b;
+  --lang-vim-script: #199f4b; /* Alias for Viml */
+  --lang-inno-setup: #000080;
+  --lang-other: #ccc;
+}

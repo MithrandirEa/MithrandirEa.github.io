@@ -93,8 +93,11 @@
       const repos = await response.json();
       console.log(`[ProjectsAPI] Fetched ${repos.length} repositories from GitHub`);
 
+      // Récupérer les langages pour chaque repo
+      const reposWithLanguages = await fetchRepoLanguages(repos);
+
       // Filtrer les repos selon la configuration
-      const filteredRepos = filterRepos(repos);
+      const filteredRepos = filterRepos(reposWithLanguages);
       console.log(`[ProjectsAPI] After filtering: ${filteredRepos.length} repositories`);
       
       // Stocker dans le cache
@@ -122,6 +125,34 @@
 
       throw error;
     }
+  }
+
+  /**
+   * Récupère les langages pour une liste de repos
+   * @param {Array} repos - Liste des repos
+   * @returns {Promise<Array>} - Liste des repos avec les détails des langages
+   */
+  async function fetchRepoLanguages(repos) {
+    const promises = repos.map(async (repo) => {
+      try {
+        const response = await fetch(repo.languages_url);
+        if (!response.ok) {
+          console.warn(`[ProjectsAPI] Could not fetch languages for ${repo.name}`);
+          return { ...repo, languages: repo.language ? [repo.language] : [] };
+        }
+        const languages = await response.json();
+        // Trier les langages par taille de code (plus grand en premier) et prendre les 4 premiers
+        const sortedLanguages = Object.keys(languages)
+          .sort((a, b) => languages[b] - languages[a])
+          .slice(0, 4);
+        
+        return { ...repo, languages: sortedLanguages.length > 0 ? sortedLanguages : (repo.language ? [repo.language] : []) };
+      } catch (error) {
+        console.error(`[ProjectsAPI] Error fetching languages for ${repo.name}:`, error);
+        return { ...repo, languages: repo.language ? [repo.language] : [] };
+      }
+    });
+    return Promise.all(promises);
   }
 
   /**
@@ -170,7 +201,9 @@
   function extractLanguages(repos) {
     const languages = new Set();
     repos.forEach(repo => {
-      if (repo.language) {
+      if (repo.languages && repo.languages.length > 0) {
+        repo.languages.forEach(lang => languages.add(lang));
+      } else if (repo.language) {
         languages.add(repo.language);
       }
     });
@@ -190,7 +223,9 @@
       state.filteredRepos = filterRepos(state.repos);
     } else {
       const baseFiltered = filterRepos(state.repos);
-      state.filteredRepos = baseFiltered.filter(repo => repo.language === language);
+      state.filteredRepos = baseFiltered.filter(repo => 
+        (repo.languages && repo.languages.includes(language)) || repo.language === language
+      );
     }
     
     renderProjects();
@@ -428,7 +463,7 @@
     // Préparer les données
     const title = repo.name || 'Sans titre';
     const description = repo.description || 'Aucune description disponible';
-    const language = repo.language || null;
+    const languages = repo.languages || (repo.language ? [repo.language] : []);
     const topics = repo.topics || [];
     const stars = repo.stargazers_count || 0;
     const repoUrl = repo.html_url || '#';
@@ -453,11 +488,15 @@
         <div class="project-card__body">
           <!-- Meta info -->
           <div class="project-card__meta">
-            ${language ? `
-              <span class="project-card__language">
-                <span class="project-card__language-dot"></span>
-                ${language}
-              </span>
+            ${languages.length > 0 ? `
+              <div class="project-card__languages">
+                ${languages.map(lang => `
+                  <span class="project-card__language">
+                    <span class="project-card__language-dot" style="background-color: var(--lang-${lang.toLowerCase().replace(/#/g, 'sharp').replace(/\+/g, 'plus')}, #ccc);"></span>
+                    ${lang}
+                  </span>
+                `).join('')}
+              </div>
             ` : ''}
             
             ${stars > 0 ? `
