@@ -93,8 +93,11 @@
       const repos = await response.json();
       console.log(`[ProjectsAPI] Fetched ${repos.length} repositories from GitHub`);
 
-      // Récupérer les langages pour chaque repo
-      const reposWithLanguages = await fetchRepoLanguages(repos);
+      // Utiliser le langage principal déjà inclus dans la réponse (évite N requêtes supplémentaires)
+      const reposWithLanguages = repos.map(repo => ({
+        ...repo,
+        languages: repo.language ? [repo.language] : []
+      }));
 
       // Filtrer les repos selon la configuration
       const filteredRepos = filterRepos(reposWithLanguages);
