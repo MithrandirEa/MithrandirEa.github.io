@@ -167,6 +167,11 @@
         return false;
       }
 
+      // Exclure les repos avec le préfixe REL
+      if (repo.name.startsWith('REL')) {
+        return false;
+      }
+
       // Exclure les forks si configuré
       if (CONFIG.filters.excludeForks && repo.fork) {
         return false;
