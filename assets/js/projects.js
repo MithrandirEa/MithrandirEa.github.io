@@ -28,7 +28,7 @@
     
     // Cache localStorage
     cacheKey: 'github_repos_cache',
-    cacheExpiration: 1000 * 60 * 60, // 1 heure en millisecondes
+    cacheExpiration: 1000 * 60 * 60 * 6, // 6 heures en millisecondes
     
     // Options de filtrage
     filters: {
@@ -72,16 +72,29 @@
 
       console.log('[ProjectsAPI] Fetching GitHub repos from:', url);
 
-      const response = await fetch(url, {
-        headers: {
-          'Accept': 'application/vnd.github.v3+json'
-        }
-      });
+      // Envoyer l'ETag si disponible pour une requête conditionnelle (ne consomme pas de quota si 304)
+      const cachedData = getCachedRepos(true);
+      const headers = { 'Accept': 'application/vnd.github.v3+json' };
+      if (cachedData && cachedData.etag) {
+        headers['If-None-Match'] = cachedData.etag;
+      }
+
+      const response = await fetch(url, { headers });
 
       // Vérifier le rate limit
       const remaining = response.headers.get('X-RateLimit-Remaining');
       const limit = response.headers.get('X-RateLimit-Limit');
       console.log(`[ProjectsAPI] GitHub API Rate Limit: ${remaining}/${limit} remaining`);
+
+      // 304 Not Modified : les données n'ont pas changé, on réutilise le cache (sans consommer de quota)
+      if (response.status === 304 && cachedData) {
+        console.log('[ProjectsAPI] 304 Not Modified — using cached repos (no rate limit consumed)');
+        cacheRepos(cachedData.repos, cachedData.etag); // Renouveler le timestamp
+        state.repos = cachedData.repos;
+        state.filteredRepos = cachedData.repos;
+        state.isLoading = false;
+        return cachedData.repos;
+      }
 
       if (!response.ok) {
         if (response.status === 403) {
@@ -90,6 +103,7 @@
         throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
       }
 
+      const etag = response.headers.get('ETag');
       const repos = await response.json();
       console.log(`[ProjectsAPI] Fetched ${repos.length} repositories from GitHub`);
 
@@ -103,8 +117,8 @@
       const filteredRepos = filterRepos(reposWithLanguages);
       console.log(`[ProjectsAPI] After filtering: ${filteredRepos.length} repositories`);
       
-      // Stocker dans le cache
-      cacheRepos(filteredRepos);
+      // Stocker dans le cache avec l'ETag
+      cacheRepos(filteredRepos, etag);
 
       state.repos = filteredRepos;
       state.filteredRepos = filteredRepos;
@@ -114,18 +128,19 @@
 
     } catch (error) {
       console.error('[ProjectsAPI] Error fetching GitHub repos:', error);
-      state.error = error.message;
       state.isLoading = false;
 
-      // Essayer de charger depuis le cache en cas d'erreur
-      const cachedRepos = getCachedRepos();
-      if (cachedRepos && cachedRepos.length > 0) {
+      // Essayer de charger depuis le cache (y compris périmé) en cas d'erreur
+      const stale = getCachedRepos(true);
+      if (stale && stale.repos.length > 0) {
         console.warn('[ProjectsAPI] Using cached repos due to API error');
-        state.repos = cachedRepos;
-        state.filteredRepos = cachedRepos;
-        return cachedRepos;
+        state.repos = stale.repos;
+        state.filteredRepos = stale.repos;
+        state.error = null; // Ne pas bloquer l'affichage
+        return stale.repos;
       }
 
+      state.error = error.message;
       throw error;
     }
   }
@@ -319,27 +334,30 @@
      ======================================== */
 
   /**
-   * Stocke les repos dans localStorage avec timestamp
+   * Stocke les repos dans localStorage avec timestamp et ETag
    * @param {Array} repos - Liste des repos à cacher
+   * @param {string|null} etag - ETag de la réponse GitHub
    */
-  function cacheRepos(repos) {
+  function cacheRepos(repos, etag = null) {
     try {
       const cacheData = {
         timestamp: Date.now(),
+        etag: etag,
         repos: repos
       };
       localStorage.setItem(CONFIG.cacheKey, JSON.stringify(cacheData));
-      console.log('[ProjectsAPI] Repos cached successfully:', repos.length, 'items');
+      console.log('[ProjectsAPI] Repos cached successfully:', repos.length, 'items', etag ? `(ETag: ${etag})` : '');
     } catch (error) {
       console.warn('[ProjectsAPI] Failed to cache repos:', error);
     }
   }
 
   /**
-   * Récupère les repos du cache s'ils sont encore valides
-   * @returns {Array|null} Repos du cache ou null si expiré/absent
+   * Récupère les données du cache
+   * @param {boolean} allowStale - Si true, retourne le cache même expiré
+   * @returns {{ repos: Array, etag: string|null, expired: boolean }|null}
    */
-  function getCachedRepos() {
+  function getCachedRepos(allowStale = false) {
     try {
       const cached = localStorage.getItem(CONFIG.cacheKey);
       if (!cached) {
@@ -349,14 +367,16 @@
 
       const cacheData = JSON.parse(cached);
       const age = Date.now() - cacheData.timestamp;
+      const expired = age >= CONFIG.cacheExpiration;
 
-      // Vérifier si le cache est encore valide
-      if (age < CONFIG.cacheExpiration) {
-        console.log(`[ProjectsAPI] Using cached repos (age: ${Math.round(age / 1000 / 60)} minutes, ${cacheData.repos.length} items)`);
-        return cacheData.repos;
+      if (!expired) {
+        console.log(`[ProjectsAPI] Using cached repos (age: ${Math.round(age / 1000 / 60)} min, ${cacheData.repos.length} items)`);
+        return { repos: cacheData.repos, etag: cacheData.etag || null, expired: false };
+      } else if (allowStale) {
+        console.warn(`[ProjectsAPI] Cache expired (age: ${Math.round(age / 1000 / 60)} min) — kept for fallback/ETag`);
+        return { repos: cacheData.repos, etag: cacheData.etag || null, expired: true };
       } else {
         console.log('[ProjectsAPI] Cache expired (age:', Math.round(age / 1000 / 60), 'minutes)');
-        localStorage.removeItem(CONFIG.cacheKey);
         return null;
       }
     } catch (error) {
@@ -385,13 +405,13 @@
     console.log('[ProjectsAPI] Current state:', { isLoading: state.isLoading, error: state.error, repos: state.repos?.length });
 
     // Vérifier si on a un cache valide
-    const cachedRepos = getCachedRepos();
-    console.log('[ProjectsAPI] Cached repos:', cachedRepos ? cachedRepos.length : 'none');
+    const cached = getCachedRepos();
+    console.log('[ProjectsAPI] Cached repos:', cached ? cached.repos.length : 'none');
     
-    if (cachedRepos && cachedRepos.length > 0) {
+    if (cached && cached.repos.length > 0 && !cached.expired) {
       console.log('[ProjectsAPI] Using cached repos');
-      state.repos = cachedRepos;
-      state.filteredRepos = cachedRepos;
+      state.repos = cached.repos;
+      state.filteredRepos = cached.repos;
       state.isLoading = false;
       state.error = null;
       
@@ -406,7 +426,7 @@
         });
       }, 2000);
       
-      return cachedRepos;
+      return cached.repos;
     }
 
     // Pas de cache, charger depuis l'API
